@@ -11,7 +11,6 @@ public class PlayerMoveAround : MonoBehaviour {
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
-
       void Start(){
            //anim = gameObject.GetComponentInChildren<Animator>();
            rb2D = transform.GetComponent<Rigidbody2D>();
