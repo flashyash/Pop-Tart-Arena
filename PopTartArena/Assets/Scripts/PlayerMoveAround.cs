@@ -13,6 +13,9 @@ public class MultiPlayerMoveAround : MonoBehaviour
       public float startSpeed = 10f;
       public bool isAlive = true;
       public bool isPlayer1 = false;
+      public bool isPlayer2 = false;
+      public bool isPlayer3 = false;
+      public bool isPlayer4 = false;
 
       private Vector3 hvMove;
 
@@ -26,13 +29,21 @@ public class MultiPlayerMoveAround : MonoBehaviour
       {
             //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
             //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
-            if (isPlayer1 == true)
+            if (isPlayer1)
             {
                   hvMove = new Vector3(Input.GetAxis("p1Horiz"), Input.GetAxis("p1Vert"), 0.0f);
             }
-            else
+            if (isPlayer2)
             {
                   hvMove = new Vector3(Input.GetAxis("p2Horiz"), Input.GetAxis("p2Vert"), 0.0f);
+            }
+            if (isPlayer3)
+            {
+                  hvMove = new Vector3(Input.GetAxis("p3Horiz"), Input.GetAxis("p3Vert"), 0.0f);
+            }
+            if (isPlayer4)
+            {
+                  hvMove = new Vector3(Input.GetAxis("p4Horiz"), Input.GetAxis("p4Vert"), 0.0f);
             }
 
             if (isAlive == true)
