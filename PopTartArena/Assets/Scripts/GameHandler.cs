@@ -3,16 +3,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.SearchService;
 
 public class GameHandler : MonoBehaviour
 {
 
-    private GameObject[] player;
-    public static int numPlayers;
+    private GameObject[] players;
+    public static int numPlayers = 4;
     public static int[] playerHealth;
     public int StartPlayerHealth = 100;
-    public GameObject healthText;
-
     public static int gotTokens = 0;
     public GameObject tokensText;
 
@@ -26,11 +25,28 @@ public class GameHandler : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectsWithTag("Player");
+
         sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "MainMenu")
+
+        if (sceneName == "WillTest")
         {
-            for (int i = 0; i < numPlayers; i++)
+            // get GameObject of each player and add to an array
+            GameObject p1 = GameObject.FindWithTag("player1");
+            GameObject p2 = GameObject.FindWithTag("player2");
+            GameObject p3 = GameObject.FindWithTag("player3");
+            GameObject p4 = GameObject.FindWithTag("player4");
+
+            players = new GameObject[4]{p1, p2, p3, p4};
+            playerHealth = new int[4];
+
+            // deactivate players if less than 4
+            for(int i = numPlayers; i < 4; i++)
+            {
+                players[i].SetActive(false);
+            }
+
+            // initialize player health
+            for(int i = 0; i < numPlayers; i++)
             {
                 playerHealth[i] = StartPlayerHealth;
             }
@@ -74,8 +90,7 @@ public class GameHandler : MonoBehaviour
 
     public void updateStatsDisplay()
     {
-        Text healthTextTemp = healthText.GetComponent<Text>();
-        healthTextTemp.text = "HEALTH: " + playerHealth;
+        
     }
 
     public void playerDies()
@@ -92,9 +107,20 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("EndLose");
     }
 
+    public void ChooseNumPlayers()
+    {
+        SceneManager.LoadScene("NumPlayers");
+    }
+
+    public void SetNumPlayers(int num)
+    {
+        numPlayers = num;
+        StartGame();
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene("PrototypeScene");
+        SceneManager.LoadScene("WillTest");
     }
 
     // Return to MainMenu
@@ -103,19 +129,15 @@ public class GameHandler : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
         // Reset all static variables here, for new games:
-        for (int i = 0; i < numPlayers; i++)
-        {
-            playerHealth[i] = StartPlayerHealth;
-        }
     }
 
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
     public void Credits()
