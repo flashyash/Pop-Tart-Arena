@@ -33,15 +33,15 @@ public class MultiPlayerMoveAround : MonoBehaviour
             {
                   hvMove = new Vector3(Input.GetAxis("p1Horiz"), Input.GetAxis("p1Vert"), 0.0f);
             }
-            if (isPlayer2)
+            else if (isPlayer2)
             {
                   hvMove = new Vector3(Input.GetAxis("p2Horiz"), Input.GetAxis("p2Vert"), 0.0f);
             }
-            if (isPlayer3)
+            else if (isPlayer3)
             {
                   hvMove = new Vector3(Input.GetAxis("p3Horiz"), Input.GetAxis("p3Vert"), 0.0f);
             }
-            if (isPlayer4)
+            else if (isPlayer4)
             {
                   hvMove = new Vector3(Input.GetAxis("p4Horiz"), Input.GetAxis("p4Vert"), 0.0f);
             }
