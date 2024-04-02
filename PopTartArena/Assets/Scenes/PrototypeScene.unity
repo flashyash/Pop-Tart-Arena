@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 1105902824}
   - component: {fileID: 1105902823}
   - component: {fileID: 1105902826}
+  - component: {fileID: 1105902827}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1155,6 +1156,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105902822}
   m_CullTransparentMesh: 1
+--- !u!114 &1105902827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105902822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad44c23786664a709175dec3604cafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6158078421770328043}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1130965178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,3 +2364,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+--- !u!4 &6158078421770328043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4361977445044665797, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+  m_PrefabInstance: {fileID: 6158078421770328042}
+  m_PrefabAsset: {fileID: 0}
