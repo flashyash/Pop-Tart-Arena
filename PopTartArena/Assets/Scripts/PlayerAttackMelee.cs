@@ -56,12 +56,15 @@ public class PlayerAttackMelee : MonoBehaviour{
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
            
             foreach(Collider2D enemy in hitEnemies){
+                  string player = determinePlayer();
+                  if(enemy.tag != player) {
                   Debug.Log("We hit " + enemy.name);
                   enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
                       // Add an AudioSource component to the GameObject
                     AudioSource audioSource = gameObject.AddComponent<AudioSource>();
                     // Play the sound effect
                     audioSource.PlayOneShot(shootSound);
+                  }
             }
       }
 
@@ -69,5 +72,20 @@ public class PlayerAttackMelee : MonoBehaviour{
       void OnDrawGizmosSelected(){
            if (attackPt == null) {return;}
             Gizmos.DrawWireSphere(attackPt.position, attackRange);
+      }
+      string determinePlayer() {
+            if(isPlayer1) {
+                  return "player1";
+            }
+            else if(isPlayer2) {
+                  return "player2";
+            }
+            else if(isPlayer3) {
+                  return "player3";
+            }
+            else if (isPlayer4) {
+                  return "player4";
+            }
+            else return "null";
       }
 }

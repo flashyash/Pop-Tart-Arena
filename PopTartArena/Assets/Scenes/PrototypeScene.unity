@@ -2351,6 +2351,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6158078421770328044}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: isPlayer1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
@@ -2423,11 +2427,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
---- !u!4 &6158078421770328043 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4361977445044665797, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
-  m_PrefabInstance: {fileID: 6158078421770328042}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6158078421770328044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5132068538251532964, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
