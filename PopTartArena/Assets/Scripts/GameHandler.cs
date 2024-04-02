@@ -28,7 +28,7 @@ public class GameHandler : MonoBehaviour
 
         sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName == "WillTest")
+        if (sceneName == "PrototypeScene")
         {
             // get GameObject of each player and add to an array
             GameObject p1 = GameObject.FindWithTag("player1");
@@ -120,7 +120,7 @@ public class GameHandler : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("WillTest");
+        SceneManager.LoadScene("PrototypeScene");
     }
 
     // Return to MainMenu
