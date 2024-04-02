@@ -12,7 +12,10 @@ public class PlayerAttackMelee : MonoBehaviour{
       public int attackDamage = 40;
       public LayerMask enemyLayers;
       public AudioClip shootSound;
-
+      public bool isPlayer1 = false;
+      public bool isPlayer2 = false;
+      public bool isPlayer3 = false;
+      public bool isPlayer4 = false;
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
@@ -21,10 +24,30 @@ public class PlayerAttackMelee : MonoBehaviour{
 
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0){
-                        Attack();
-                        nextAttackTime = Time.time + 1f / attackRate;
-                  }
+                 if(isPlayer1) {
+                        if (Input.GetAxis("p1Melee") > 0){
+                              Attack();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else if(isPlayer2) {
+                        if (Input.GetAxis("p2Melee") > 0){
+                              Attack();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else if(isPlayer3) {
+                        if (Input.GetAxis("p3Melee") > 0){
+                              Attack();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else {
+                        if (Input.GetAxis("p4Melee") > 0){
+                              Attack();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
             }
       }
 
