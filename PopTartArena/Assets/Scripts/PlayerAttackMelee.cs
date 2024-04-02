@@ -6,17 +6,19 @@ public class PlayerAttackMelee : MonoBehaviour{
 
       //public Animator animator;
       public Transform attackPt;
-      public float attackRange = 0.5f;
-      public float attackRate = 2f;
+      public float attackRange = 0.1f;
+      public float attackRate = 1f;
       private float nextAttackTime = 0f;
       public int attackDamage = 40;
       public LayerMask enemyLayers;
+      public AudioClip shootSound;
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
 
       void Update(){
+
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
                  if (Input.GetAxis("Attack") > 0){
@@ -32,7 +34,11 @@ public class PlayerAttackMelee : MonoBehaviour{
            
             foreach(Collider2D enemy in hitEnemies){
                   Debug.Log("We hit " + enemy.name);
-                  //enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
+                  enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
+                      // Add an AudioSource component to the GameObject
+                    AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+                    // Play the sound effect
+                    audioSource.PlayOneShot(shootSound);
             }
       }
 
