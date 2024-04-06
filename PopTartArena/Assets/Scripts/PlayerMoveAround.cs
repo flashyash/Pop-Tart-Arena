@@ -32,19 +32,19 @@ public class MultiPlayerMoveAround : MonoBehaviour
         //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
         if (isPlayer1)
         {
-            hvMove = new Vector3(Input.GetAxis("p1Horiz"), Input.GetAxis("p1Vert"), 0.0f);
+            hvMove = new Vector3(Input.GetAxis("p1Horiz"), 0.0f, 0.0f);
         }
         else if (isPlayer2)
         {
-            hvMove = new Vector3(Input.GetAxis("p2Horiz"), Input.GetAxis("p2Vert"), 0.0f);
+            hvMove = new Vector3(Input.GetAxis("p2Horiz"), 0.0f, 0.0f);
         }
         else if (isPlayer3)
         {
-            hvMove = new Vector3(Input.GetAxis("p3Horiz"), Input.GetAxis("p3Vert"), 0.0f);
+            hvMove = new Vector3(Input.GetAxis("p3Horiz"), 0.0f, 0.0f);
         }
         else if (isPlayer4)
         {
-            hvMove = new Vector3(Input.GetAxis("p4Horiz"), Input.GetAxis("p4Vert"), 0.0f);
+            hvMove = new Vector3(Input.GetAxis("p4Horiz"), 0.0f, 0.0f);
         }
 
         if (isAlive == true)
@@ -63,7 +63,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
 
             transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
 
-            if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0))
+            if ((Input.GetAxis("Horizontal") != 0))
             {
                 //     anim.SetBool ("Walk", true);
                 //     if (!WalkSFX.isPlaying){
