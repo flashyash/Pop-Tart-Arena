@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NumPlayers.unity
     guid: 02a19a328976e6d4a98bd0695441b2eb
   - enabled: 0
-    path: Assets/Scenes/ChoosePlayerScene.unity
+    path: Assets/Scenes/Dontuse.unity
     guid: ef665333fb14f4f9e966289890118283
   - enabled: 0
     path: Assets/Scenes/LevelsScene.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 8659d3f4900154913ac3856ab303abce
+  - enabled: 1
+    path: Assets/Scenes/PrePlay.unity
+    guid: c43d07daea1794113aef2e1c15948ca9
   m_configObjects: {}

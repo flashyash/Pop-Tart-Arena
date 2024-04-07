@@ -121,7 +121,12 @@ public class GameHandler : MonoBehaviour
     public void SetLevel(int chosenLevel)
     {
         level = chosenLevel;
-        StartGame();
+        LoadPrePlayScene();
+    }
+
+    public void LoadPrePlayScene()
+    {
+        SceneManager.LoadScene("PrePlay");
     }
 
     public void ShowInstructions()
