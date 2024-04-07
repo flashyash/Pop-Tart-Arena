@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour
 
     private GameObject[] players;
     public static int numPlayers = 4;
+    public static int level = 1;
     public static int[] playerHealth;
     public int StartPlayerHealth = 100;
     public static int gotTokens = 0;
@@ -114,6 +115,12 @@ public class GameHandler : MonoBehaviour
     public void SetNumPlayers(int num)
     {
         numPlayers = num;
+        SceneManager.LoadScene("ChooseLevelScene");
+    }
+
+    public void SetLevel(int chosenLevel)
+    {
+        level = chosenLevel;
         StartGame();
     }
 
