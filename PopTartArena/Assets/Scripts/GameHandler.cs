@@ -124,6 +124,16 @@ public class GameHandler : MonoBehaviour
         StartGame();
     }
 
+    public void ShowInstructions()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
+
+    public void ShowCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("PrototypeScene");
@@ -144,10 +154,5 @@ public class GameHandler : MonoBehaviour
         #else
             Application.Quit();
         #endif
-    }
-
-    public void Credits()
-    {
-        SceneManager.LoadScene("Credits");
     }
 }
