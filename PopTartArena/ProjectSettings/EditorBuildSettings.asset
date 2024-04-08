@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Dontuse.unity
     guid: ef665333fb14f4f9e966289890118283
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LevelsScene.unity
     guid: bacaf6269589649fd84ad313e5bdbe9e
   - enabled: 1
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrePlay.unity
     guid: c43d07daea1794113aef2e1c15948ca9
+  - enabled: 1
+    path: Assets/Scenes/Pantry_Arena.unity
+    guid: c570d468f396a42318fc95b735ef2f44
   m_configObjects: {}
