@@ -141,7 +141,24 @@ public class GameHandler : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("PrototypeScene");
+        switch (level)
+        {
+            case 1:
+                SceneManager.LoadScene("Pantry_Arena");
+                break;
+            case 2:
+                SceneManager.LoadScene("Pantry_Arena");
+                break;
+            case 3:
+                SceneManager.LoadScene("Pantry_Arena");
+                break;
+            case 4:
+                SceneManager.LoadScene("Pantry_Arena");
+                break;
+            case 5:
+                SceneManager.LoadScene("Pantry_Arena");
+                break;
+        }
     }
 
     // Return to MainMenu
