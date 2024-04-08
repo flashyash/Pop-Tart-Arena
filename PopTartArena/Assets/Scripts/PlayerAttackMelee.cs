@@ -23,7 +23,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Update(){
 
            if (Time.time >= nextAttackTime){
-                  //if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.Space))
                  if(isPlayer1) {
                         if (Input.GetAxis("p1Melee") > 0){
                               Attack();

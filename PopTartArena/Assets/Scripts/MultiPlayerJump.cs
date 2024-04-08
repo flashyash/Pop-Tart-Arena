@@ -13,6 +13,10 @@ public class PlayerJump : MonoBehaviour
     public bool canJump = false;
     public int jumpTimes = 0;
     public bool isAlive = true;
+    public bool isPlayer1 = false;
+    public bool isPlayer2 = false;
+    public bool isPlayer3 = false;
+    public bool isPlayer4 = false;
     //public AudioSource JumpSFX;
 
     void Start()
@@ -23,6 +27,7 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
+        //if (isPlayer1 == true){
         if ((IsGrounded()) || (jumpTimes <= 1))
         {
             // if ((IsGrounded()) && (jumpTimes <= 1)){ // for single jump only
@@ -56,7 +61,7 @@ public class PlayerJump : MonoBehaviour
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 2f, groundLayer);
         if ((groundCheck != null))
         {
-            //Debug.Log("I am trouching ground!");
+            //Debug.Log("I am touching ground!");
             jumpTimes = 0;
             return true;
         }
