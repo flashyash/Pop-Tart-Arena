@@ -22,7 +22,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
 
     void Start()
     {
-        anim = gameObject.GetComponentInChildren<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
     }
 
