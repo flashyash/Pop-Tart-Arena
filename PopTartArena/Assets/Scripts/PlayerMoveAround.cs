@@ -6,7 +6,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
 {
     // public float minX, maxX, minY, maxY; // for setting boundaries 
 
-    //public Animator anim;
+    private Animator anim;
     //public AudioSource WalkSFX;
     public Rigidbody2D rb2D;
     private bool FaceRight = false; // determine which way player is facing.
@@ -22,7 +22,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
 
     void Start()
     {
-        //anim = gameObject.GetComponentInChildren<Animator>();
+        anim = gameObject.GetComponentInChildren<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
     }
 
@@ -30,6 +30,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
     {
         //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
         //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
+        
         if (isPlayer1)
         {
             hvMove = new Vector3(Input.GetAxis("p1Horiz"), 0.0f, 0.0f);
@@ -65,14 +66,14 @@ public class MultiPlayerMoveAround : MonoBehaviour
 
             if ((Input.GetAxis("Horizontal") != 0))
             {
-                //     anim.SetBool ("Walk", true);
+                anim.SetBool ("Walk", true);
                 //     if (!WalkSFX.isPlaying){
                 //           WalkSFX.Play();
                 //     }
             }
             else
             {
-                //     anim.SetBool ("Walk", false);
+                anim.SetBool ("Walk", false);
                 //     WalkSFX.Stop();
             }
 

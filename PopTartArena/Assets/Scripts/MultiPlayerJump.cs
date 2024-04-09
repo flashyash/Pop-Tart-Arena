@@ -20,12 +20,14 @@ public class PlayerJump : MonoBehaviour
     private bool jumpButtonDown = false;
     public GameObject platforms;
 
+    private Animator anim;
     //public AudioSource JumpSFX;
 
     void Start()
     {
         //anim = gameObject.GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -67,6 +69,7 @@ public class PlayerJump : MonoBehaviour
         if(jumpButtonDown && canJump && isAlive)
         {
             Jump(Vector2.up);
+            anim.Play("jump");
         }
 
         /* jump down
