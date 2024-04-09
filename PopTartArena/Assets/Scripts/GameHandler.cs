@@ -14,6 +14,15 @@ public class GameHandler : MonoBehaviour
     public int StartPlayerHealth = 100;
     public static int gotTokens = 0;
     public GameObject tokensText;
+    private GameObject p1;
+    private GameObject p2;
+    private GameObject p3;
+    private GameObject p4;
+
+    private Animator p1Anim;
+    private Animator p2Anim;
+    private Animator p3Anim;
+    private Animator p4Anim;
 
     public bool isDefending = false;
 
@@ -28,13 +37,17 @@ public class GameHandler : MonoBehaviour
 
         sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName == "PrototypeScene")
-        {
+        
             // get GameObject of each player and add to an array
-            GameObject p1 = GameObject.FindWithTag("player1");
-            GameObject p2 = GameObject.FindWithTag("player2");
-            GameObject p3 = GameObject.FindWithTag("player3");
-            GameObject p4 = GameObject.FindWithTag("player4");
+            p1 = GameObject.FindWithTag("player1");
+            p2 = GameObject.FindWithTag("player2");
+            p3 = GameObject.FindWithTag("player3");
+            p4 = GameObject.FindWithTag("player4");
+
+            p1Anim = p1.GetComponent<Animator>();
+            p2Anim = p2.GetComponent<Animator>();
+            p3Anim = p3.GetComponent<Animator>();
+            p4Anim = p4.GetComponent<Animator>();
 
             players = new GameObject[4]{p1, p2, p3, p4};
             playerHealth = new int[4];
@@ -50,7 +63,7 @@ public class GameHandler : MonoBehaviour
             {
                 playerHealth[i] = StartPlayerHealth;
             }
-        }
+        
         updateStatsDisplay();
     }
 
@@ -62,15 +75,28 @@ public class GameHandler : MonoBehaviour
 
     public void playerGetHit(int damage, int whichPlayer)
     {
+        if(whichPlayer == 1) {
+            p1Anim.Play("hit");
+        }
+        if(whichPlayer == 2) {
+            p2Anim.Play("hit");
+        }
+        if(whichPlayer == 3) {
+            p3Anim.Play("hit");
+        }
+        if(whichPlayer == 4) {
+            p4Anim.Play("hit");
+        }
         int playerIndex = whichPlayer - 1;
         playerHealth[playerIndex] -= damage;
         if (playerHealth[playerIndex] >= 0)
         {
             updateStatsDisplay();
+
         }
         if (damage > 0)
         {
-            //player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
+            
         }
 
 
