@@ -37,7 +37,10 @@ public class GameHandler : MonoBehaviour
 
         sceneName = SceneManager.GetActiveScene().name;
 
-        
+        // change later to run on all game scenes
+
+        if(sceneName == "Pantry_Arena")    
+        {
             // get GameObject of each player and add to an array
             p1 = GameObject.FindWithTag("player1");
             p2 = GameObject.FindWithTag("player2");
@@ -63,7 +66,8 @@ public class GameHandler : MonoBehaviour
             {
                 playerHealth[i] = StartPlayerHealth;
             }
-        
+        }
+
         updateStatsDisplay();
     }
 
