@@ -17,6 +17,7 @@ public class PlayerJump : MonoBehaviour
     public bool isPlayer2 = false;
     public bool isPlayer3 = false;
     public bool isPlayer4 = false;
+    private bool jumpButtonDown = false;
     public GameObject platforms;
 
     //public AudioSource JumpSFX;
@@ -30,9 +31,8 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
 
-        if ((IsGrounded()) || (jumpTimes <= 1))
+        if (IsGrounded() || (jumpTimes <= 1))
         {
-            // if ((IsGrounded()) && (jumpTimes <= 1)){ // for single jump only
             canJump = true;
         }
         else if (jumpTimes > 1)
@@ -41,30 +41,35 @@ public class PlayerJump : MonoBehaviour
             canJump = false;
         }
 
-        if ((Input.GetButtonDown("Jump")) && canJump && isAlive)
+        // if ((Input.GetButtonDown("Jump")) && canJump && isAlive)
+        // {
+        //     Jump(Vector2.up);
+        // } 
+      
+        if (isPlayer1)
         {
-            Jump(Vector2.up);
-        } 
-/*        
-        jump up
-        if (isPlayer1 && Input.GetAxis("p1Vert") > 0 && canJump && isAlive) 
-        {
-            Jump(Vector2.up);
+            jumpButtonDown = Input.GetButtonDown("p1Jump");
         }
-        if (isPlayer2 && Input.GetAxis("p2Vert") > 0 && canJump && isAlive) 
+        else if (isPlayer2)
         {
-            Jump(Vector2.up);
+            jumpButtonDown = Input.GetButtonDown("p2Jump");
         }
-        if (isPlayer3 && Input.GetAxis("p3Vert") > 0 && canJump && isAlive) 
+        else if (isPlayer3)
         {
-            Jump(Vector2.up);
+            jumpButtonDown = Input.GetButtonDown("p3Jump");
         }
-        if (isPlayer4 && Input.GetAxis("p4Vert") > 0 && canJump && isAlive) 
+        else if (isPlayer4)
         {
-            Jump(Vector2.up);
-        } 
+            jumpButtonDown = Input.GetButtonDown("p4Jump");
+        }
 
-        // jump down
+
+        if(jumpButtonDown && canJump && isAlive)
+        {
+            Jump(Vector2.up);
+        }
+
+        /* jump down
         
         if (isPlayer1 && Input.GetAxis("p1Vert") < 0 && canJump && isAlive) 
         {
@@ -134,7 +139,7 @@ public class PlayerJump : MonoBehaviour
     public bool IsGrounded()
     {
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 2f, groundLayer);
-        if ((groundCheck != null))
+        if (groundCheck != null)
         {
             //Debug.Log("I am touching ground!");
             jumpTimes = 0;
