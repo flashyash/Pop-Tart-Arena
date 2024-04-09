@@ -18,6 +18,7 @@ public class PlayerJump : MonoBehaviour
     public bool isPlayer3 = false;
     public bool isPlayer4 = false;
     private bool jumpButtonDown = false;
+    private bool dropButtonDown = false;
     public GameObject platforms;
 
     private Animator anim;
@@ -51,18 +52,22 @@ public class PlayerJump : MonoBehaviour
         if (isPlayer1)
         {
             jumpButtonDown = Input.GetButtonDown("p1Jump");
+            dropButtonDown = Input.GetAxis("p1Drop") < 0;
         }
         else if (isPlayer2)
         {
             jumpButtonDown = Input.GetButtonDown("p2Jump");
+            dropButtonDown = Input.GetAxis("p2Drop") < 0;
         }
         else if (isPlayer3)
         {
             jumpButtonDown = Input.GetButtonDown("p3Jump");
+            dropButtonDown = Input.GetAxis("p3Drop") < 0;
         }
         else if (isPlayer4)
         {
             jumpButtonDown = Input.GetButtonDown("p4Jump");
+            dropButtonDown = Input.GetAxis("p4Drop") < 0;
         }
 
 
@@ -70,6 +75,10 @@ public class PlayerJump : MonoBehaviour
         {
             Jump(Vector2.up);
             anim.Play("jump");
+        }
+        else if(dropButtonDown && canJump && isAlive)
+        {
+            Jump(Vector2.down);
         }
 
         /* jump down
@@ -96,7 +105,15 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump(Vector2 direction)
     {
-        jumpTimes += 1;
+        if(direction.y > 0)
+        {
+            jumpTimes += 1;
+        }
+        else if(direction.y < 0)
+        {
+            jumpTimes = 2;
+        }
+       
         rb.velocity = direction * jumpForce;
         // anim.SetTrigger("Jump");
         // JumpSFX.Play();
