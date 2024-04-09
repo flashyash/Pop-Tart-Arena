@@ -16,34 +16,38 @@ public class PlayerAttackMelee : MonoBehaviour{
       public bool isPlayer2 = false;
       public bool isPlayer3 = false;
       public bool isPlayer4 = false;
+      private Animator anim;
       void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
+           anim = gameObject.GetComponent<Animator>();
       }
 
       void Update(){
 
            if (Time.time >= nextAttackTime){
-            //if (Input.GetKeyDown(KeyCode.Space))
                  if(isPlayer1) {
                         if (Input.GetAxis("p1Melee") > 0){
+                              anim.Play("attack");
                               Attack();
                               nextAttackTime = Time.time + 1f / attackRate;
                         }
                  }
                  else if(isPlayer2) {
                         if (Input.GetAxis("p2Melee") > 0){
+                              anim.Play("attack");
                               Attack();
                               nextAttackTime = Time.time + 1f / attackRate;
                         }
                  }
                  else if(isPlayer3) {
                         if (Input.GetAxis("p3Melee") > 0){
+                              anim.Play("attack");
                               Attack();
                               nextAttackTime = Time.time + 1f / attackRate;
                         }
                  }
                  else {
                         if (Input.GetAxis("p4Melee") > 0){
+                              anim.Play("attack");
                               Attack();
                               nextAttackTime = Time.time + 1f / attackRate;
                         }

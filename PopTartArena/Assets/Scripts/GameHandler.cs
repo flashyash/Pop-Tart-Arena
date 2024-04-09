@@ -78,13 +78,13 @@ public class GameHandler : MonoBehaviour
         if(whichPlayer == 1) {
             p1Anim.Play("hit");
         }
-        if(whichPlayer == 2) {
+        else if(whichPlayer == 2) {
             p2Anim.Play("hit");
         }
-        if(whichPlayer == 3) {
+        else if(whichPlayer == 3) {
             p3Anim.Play("hit");
         }
-        if(whichPlayer == 4) {
+        else if(whichPlayer == 4) {
             p4Anim.Play("hit");
         }
         int playerIndex = whichPlayer - 1;
@@ -110,6 +110,18 @@ public class GameHandler : MonoBehaviour
         {
             playerHealth[playerIndex] = 0;
             updateStatsDisplay();
+            if(whichPlayer == 1) {
+                p1Anim.Play("death");
+            }
+            else if(whichPlayer == 2) {
+                p2Anim.Play("death");
+            }
+            else if(whichPlayer == 3) {
+                p3Anim.Play("death");
+            }
+            else if(whichPlayer == 4) {
+                p4Anim.Play("death");
+            }
             playerDies();
         }
     }
