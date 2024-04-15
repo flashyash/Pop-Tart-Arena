@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9339623, g: 0.6226415, b: 0.6226415, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1081,8 +1081,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.3478, y: 5.2443}
-  m_SizeDelta: {x: 1202.8271, y: 452.1204}
+  m_AnchoredPosition: {x: -2.3478, y: 15.9727}
+  m_SizeDelta: {x: 1202.8271, y: 473.5772}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118683370
 MonoBehaviour:
@@ -1106,10 +1106,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 53
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 4
     m_MaxSize: 80
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1117,18 +1117,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use arrow keys to move around and space key to shoot! Be the last poptart
-    standing.
-
-
-    Player 1: WASD
-
-    Player 2: Arrow keys
-
-    Player 3: Controller
-    1
-
-    Player 4: Controller 2'
+  m_Text: "Be the last poptart standing!\n\nKeyboard Inputs\nPlayer 1: WASD, c and
+    v to attack\nPlayer 2: IJKL, > and ? to attack\n\nController Inputs\nMove: L
+    Joystick,\tJump: A\nAttack: B and Y"
 --- !u!222 &2118683371
 CanvasRenderer:
   m_ObjectHideFlags: 0
