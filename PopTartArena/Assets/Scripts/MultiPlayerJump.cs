@@ -7,6 +7,7 @@ public class PlayerJump : MonoBehaviour
 
     //public Animator anim;
     public Rigidbody2D rb;
+    public Collider2D playerCollider;
     public float jumpForce = 10f;
     public Transform feet;
     public LayerMask groundLayer;
@@ -28,6 +29,7 @@ public class PlayerJump : MonoBehaviour
     {
         //anim = gameObject.GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
         anim = gameObject.GetComponentInChildren<Animator>();
     }
 
@@ -48,35 +50,35 @@ public class PlayerJump : MonoBehaviour
         // {
         //     Jump(Vector2.up);
         // } 
-      
+
         if (isPlayer1)
         {
             jumpButtonDown = Input.GetButtonDown("p1Jump");
-            dropButtonDown = Input.GetAxis("p1Drop") < 0;
+            dropButtonDown = Input.GetAxis("p1Drop") < -0.9f;
         }
         else if (isPlayer2)
         {
             jumpButtonDown = Input.GetButtonDown("p2Jump");
-            dropButtonDown = Input.GetAxis("p2Drop") < 0;
+            dropButtonDown = Input.GetAxis("p2Drop") < -0.9f;
         }
         else if (isPlayer3)
         {
             jumpButtonDown = Input.GetButtonDown("p3Jump");
-            dropButtonDown = Input.GetAxis("p3Drop") < 0;
+            dropButtonDown = Input.GetAxis("p3Drop") < -0.9f;
         }
         else if (isPlayer4)
         {
             jumpButtonDown = Input.GetButtonDown("p4Jump");
-            dropButtonDown = Input.GetAxis("p4Drop") < 0;
+            dropButtonDown = Input.GetAxis("p4Drop") < -0.9f;
         }
 
 
-        if(jumpButtonDown && canJump && isAlive)
+        if (jumpButtonDown && canJump && isAlive)
         {
             Jump(Vector2.up);
             anim.Play("jump");
         }
-        else if(dropButtonDown && canJump && isAlive)
+        else if (dropButtonDown && canJump && isAlive)
         {
             Jump(Vector2.down);
         }
@@ -105,15 +107,26 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump(Vector2 direction)
     {
-        if(direction.y > 0)
+        if (direction.y > 0)
         {
             jumpTimes += 1;
         }
-        else if(direction.y < 0)
+        else if (direction.y < 0)
         {
             jumpTimes = 2;
+            // disable collisions with platforms
+            foreach (Transform child in platforms.transform)
+            {
+                // Check if the child has a collider component
+                Collider2D collider = child.GetComponent<Collider2D>();
+                if (collider != null)
+                {
+                    Physics2D.IgnoreCollision(collider, playerCollider, true);
+                }
+            }
+            StartCoroutine(EnableCollisionAfterDelay());
         }
-       
+
         rb.velocity = direction * jumpForce;
         // anim.SetTrigger("Jump");
         // JumpSFX.Play();
@@ -121,37 +134,21 @@ public class PlayerJump : MonoBehaviour
         //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         //rb.velocity = movement;
 
-        // Iterate over all child game objects of the parent
-        foreach (Transform child in platforms.transform)
-        {
-            // Check if the child has a collider component
-            Collider2D collider = child.GetComponent<Collider2D>();
-            if (collider != null)
-            {
-                // Set the collider to be a trigger
-                collider.isTrigger = true;
-            }
-        }
-
-        // Start coroutine to re-enable collider after a short delay
-        StartCoroutine(EnableColliderAfterDelay());
+        // disable then Start coroutine to re-enable collider after a short delay
     }
 
-    private IEnumerator EnableColliderAfterDelay()
+    private IEnumerator EnableCollisionAfterDelay()
     {
         // Wait for a short duration (adjust as needed)
         yield return new WaitForSeconds(0.2f);
-
-        // Re-enable collider's trigger
-        // Iterate over all child game objects of the parent
+        // reset collision detection
         foreach (Transform child in platforms.transform)
         {
             // Check if the child has a collider component
             Collider2D collider = child.GetComponent<Collider2D>();
             if (collider != null)
             {
-                // Set the collider to be a trigger
-                collider.isTrigger = false;
+                Physics2D.IgnoreCollision(collider, playerCollider, false);
             }
         }
     }

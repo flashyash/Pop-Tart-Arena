@@ -1308,7 +1308,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1534596469}
   - {fileID: 1303280627}
   - {fileID: 1369094525}
   m_Father: {fileID: 0}
@@ -1368,7 +1367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: platforms
@@ -1465,6 +1464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1303280627}
   - component: {fileID: 1303280628}
+  - component: {fileID: 1303280629}
   m_Layer: 3
   m_Name: TopShelf
   m_TagString: Untagged
@@ -1480,7 +1480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303280626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.2, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1517,7 +1517,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -1532,6 +1532,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.03}
   m_EdgeRadius: 0
+--- !u!251 &1303280629
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303280626}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1330364768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369094525}
   - component: {fileID: 1369094526}
+  - component: {fileID: 1369094527}
   m_Layer: 3
   m_Name: MiddleShelf
   m_TagString: Untagged
@@ -1698,7 +1718,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -1713,6 +1733,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.03}
   m_EdgeRadius: 0
+--- !u!251 &1369094527
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369094524}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1370424752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: platforms
@@ -2093,6 +2132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534596469}
   - component: {fileID: 1534596471}
+  - component: {fileID: 1534596472}
   m_Layer: 3
   m_Name: BottomShelf
   m_TagString: Untagged
@@ -2107,13 +2147,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534596468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.41853666, y: -4.1310406, z: -0.018598694}
   m_LocalScale: {x: 10, y: 11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161905960}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1534596471
 BoxCollider2D:
@@ -2145,7 +2185,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -2160,6 +2200,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.03}
   m_EdgeRadius: 0
+--- !u!251 &1534596472
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534596468}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1650050875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2226,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: platforms
@@ -2543,7 +2602,7 @@ GameObject:
   - component: {fileID: 2003268121}
   - component: {fileID: 2003268120}
   - component: {fileID: 2003268119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MapBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2582,7 +2641,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.56}
+  m_Offset: {x: 0, y: -7.0527477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2593,7 +2652,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.83, y: 1}
+  m_Size: {x: 18.83, y: 1.6196308}
   m_EdgeRadius: 0
 --- !u!61 &2003268120
 BoxCollider2D:
@@ -2627,7 +2686,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 5.47}
+  m_Offset: {x: 0, y: 7.695039}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2638,7 +2697,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.72, y: 1}
+  m_Size: {x: 18.72, y: 1.0563297}
   m_EdgeRadius: 0
 --- !u!61 &2003268121
 BoxCollider2D:
@@ -2672,7 +2731,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 9.38, y: 0}
+  m_Offset: {x: 9.38, y: 0.5351362}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2683,7 +2742,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 9.96}
+  m_Size: {x: 1, y: 15.086039}
   m_EdgeRadius: 0
 --- !u!61 &2003268122
 BoxCollider2D:
@@ -2717,7 +2776,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.47, y: 0}
+  m_Offset: {x: -9.47, y: 0.47880626}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2728,7 +2787,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.095512}
+  m_Size: {x: 1, y: 15.334211}
   m_EdgeRadius: 0
 --- !u!4 &2003268123
 Transform:
@@ -2885,7 +2944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2189051585208236098, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: platforms
@@ -2910,6 +2969,10 @@ PrefabInstance:
     - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_Offset.y
       value: -4.3130417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
