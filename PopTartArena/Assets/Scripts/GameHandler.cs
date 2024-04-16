@@ -73,7 +73,7 @@ public class GameHandler : MonoBehaviour
 
     public void playerGetHit(int damage, int whichPlayer)
     {
-        Debug.Log("player is hit");
+
         if(whichPlayer == 1) {
             p1Anim.Play("hit");
             gotHit.Play();
@@ -90,17 +90,15 @@ public class GameHandler : MonoBehaviour
             p4Anim.Play("hit");
             gotHit.Play();
         }
-        int playerIndex = whichPlayer - 1;
+       
+        int playerIndex = whichPlayer - 1; 
         playerHealth[playerIndex] -= damage;
+       
         if (playerHealth[playerIndex] >= 0)
         {
             updateStatsDisplay();
+        }
 
-        }
-        if (damage > 0)
-        {
-            
-        }
 
 
         if (playerHealth[playerIndex] > StartPlayerHealth)
@@ -150,7 +148,6 @@ public class GameHandler : MonoBehaviour
         // player.GetComponent<PlayerMove>().isAlive = false;   //deactivate movement animation
         // player.GetComponent<PlayerJump>().isAlive = false;   //deactivate jump animation
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("EndLose");
     }
 
     public void ChooseNumPlayers()
