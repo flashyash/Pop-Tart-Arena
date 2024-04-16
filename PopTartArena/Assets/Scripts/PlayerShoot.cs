@@ -10,6 +10,7 @@ public class PlayerShoot : MonoBehaviour{
       public float projectileSpeed = 10f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
+      public AudioClip shootSound;
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
@@ -17,7 +18,6 @@ public class PlayerShoot : MonoBehaviour{
 
       void Update(){
            if (Time.time >= nextAttackTime){
-                  //if (Input.GetKeyDown(KeyCode.Space))
                  if (gameObject.tag == "player1") {
                         if (Input.GetAxis("p1Shoot") > 0){
                               playerFire();
@@ -51,5 +51,7 @@ public class PlayerShoot : MonoBehaviour{
             Vector2 fwd = (firePoint.position - this.transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().AddForce(fwd * projectileSpeed, ForceMode2D.Impulse);
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.PlayOneShot(shootSound);
       }
 }

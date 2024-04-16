@@ -16,7 +16,7 @@ public class PlayerProjectile : MonoBehaviour{
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
-      void OnTriggerEnter2D(Collider2D other){
+      void OnColliderEnter2D(Collider2D other){
             Destroy(gameObject);
       }
 
@@ -28,6 +28,6 @@ public class PlayerProjectile : MonoBehaviour{
 
       IEnumerator selfDestruct(){
             yield return new WaitForSeconds(SelfDestructTime);
-            Destroy (gameObject);
+            Destroy(gameObject);
       }
 }
