@@ -49,7 +49,7 @@ public class PlayerShoot : MonoBehaviour{
       }
 
       void playerFire(){
-            if(gameObject.tag == "player1"){               
+              
             
             Vector2 fwd = (firePoint.position - this.transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
