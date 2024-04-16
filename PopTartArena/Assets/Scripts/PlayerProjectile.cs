@@ -18,7 +18,7 @@ public class PlayerProjectile : MonoBehaviour{
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
       void OnColliderEnter2D(Collider2D other){
-            handler.GetComponent<GameHandler>().playerGetHit(damage, findPlayer(other.tag));
+
             Destroy(gameObject);
       }
 
