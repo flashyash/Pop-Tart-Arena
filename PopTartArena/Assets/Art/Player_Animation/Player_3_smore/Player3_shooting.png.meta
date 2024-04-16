@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72c591963d4124b6992d760a809f7fb9
+guid: c18d89d425fce4559932a29f51d773ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player3_shooting_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 389.3333
+        width: 213.5
+        height: 194.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73b0f6b0265b4d58924e609e35edeaf
+      internalID: 659864234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player3_shooting_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 389.3333
+        width: 213.5
+        height: 194.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2f280ad89bb49b1b9f75dd5dcea3ac
+      internalID: -1787753780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player3_shooting_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195.33333
+        width: 213.5
+        height: 194.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bd01e9c466341b39e31195ff988053
+      internalID: 385143062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player3_shooting_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 195.33333
+        width: 213.5
+        height: 194.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7075a88f8beb0426aaa4a837bb0c878c
+      internalID: 409059186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player3_shooting_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333282
+        width: 213.5
+        height: 194.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0966b45423bc1469dab1e84cd80472b0
+      internalID: 1450732646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player3_shooting_0: 659864234
+      Player3_shooting_1: -1787753780
+      Player3_shooting_2: 385143062
+      Player3_shooting_3: 409059186
+      Player3_shooting_4: 1450732646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

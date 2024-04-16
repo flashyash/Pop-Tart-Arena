@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player1_melee_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380.6667
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35ff85f6305c4f3a87cde2aa86ef640
+      internalID: 595262277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player1_melee_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 380.6667
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1374e76c4749e4244aa10e5ea05a9e57
+      internalID: 1199214183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player1_melee_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190.66667
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9af13251ce641bead7124f06ec2307
+      internalID: -2116315886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player1_melee_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 190.66667
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98f82752da704ad4857c81b563d6ea2
+      internalID: 2067637956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player1_melee_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66667175
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a31e3ece4914fba9065a1ab2af30b4
+      internalID: -62452276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player1_melee_5
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0.66667175
+        width: 218.5
+        height: 190.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde958e93e7794c28badf8c1b6f48029
+      internalID: -1645752319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player1_melee_0: 595262277
+      Player1_melee_1: 1199214183
+      Player1_melee_2: -2116315886
+      Player1_melee_3: 2067637956
+      Player1_melee_4: -62452276
+      Player1_melee_5: -1645752319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
