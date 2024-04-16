@@ -21,6 +21,7 @@ public class PlayerShoot : MonoBehaviour{
            if (Time.time >= nextAttackTime){
                  if (gameObject.tag == "player1") {
                         if (Input.GetAxis("p1Shoot") > 0){
+                              animator.Play("shoot");
                               playerFire();
                               nextAttackTime = Time.time + 1f / attackRate;
                         }
@@ -48,9 +49,7 @@ public class PlayerShoot : MonoBehaviour{
       }
 
       void playerFire(){
-            if(gameObject.tag == "player1"){
-                  animator.Play("shoot");
-            }
+              
             
             Vector2 fwd = (firePoint.position - this.transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
