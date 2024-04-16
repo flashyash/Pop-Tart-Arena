@@ -12,6 +12,8 @@ public class GameHandler : MonoBehaviour
     public static int level = 1;
     public static int[] playerHealth;
     public int StartPlayerHealth = 100;
+    public AudioSource deathSound;
+    public AudioSource gotHit;
     private GameObject p1;
     private GameObject p2;
     private GameObject p3;
@@ -73,15 +75,19 @@ public class GameHandler : MonoBehaviour
     {
         if(whichPlayer == 1) {
             p1Anim.Play("hit");
+            gotHit.Play();
         }
         else if(whichPlayer == 2) {
             p2Anim.Play("hit");
+            gotHit.Play();
         }
         else if(whichPlayer == 3) {
             p3Anim.Play("hit");
+            gotHit.Play();
         }
         else if(whichPlayer == 4) {
             p4Anim.Play("hit");
+            gotHit.Play();
         }
         int playerIndex = whichPlayer - 1;
         playerHealth[playerIndex] -= damage;
@@ -107,16 +113,21 @@ public class GameHandler : MonoBehaviour
             playerHealth[playerIndex] = 0;
             updateStatsDisplay();
             if(whichPlayer == 1) {
+                Debug.Log("P1Died");
                 p1Anim.Play("death");
+                deathSound.Play();
             }
             else if(whichPlayer == 2) {
                 p2Anim.Play("death");
+                deathSound.Play();
             }
             else if(whichPlayer == 3) {
                 p3Anim.Play("death");
+                deathSound.Play();
             }
             else if(whichPlayer == 4) {
                 p4Anim.Play("death");
+                deathSound.Play();
             }
             playerDies();
         }
