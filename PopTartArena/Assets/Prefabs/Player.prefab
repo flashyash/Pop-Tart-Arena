@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2937831660587268061}
   - component: {fileID: 2189051585208236098}
   - component: {fileID: 8331433002287892368}
+  - component: {fileID: 7835974469107222208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -356,3 +357,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+--- !u!114 &7835974469107222208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480205188061399571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d537ac2206567684f9925d1fd9b8faf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  attackRate: 2

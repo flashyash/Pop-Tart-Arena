@@ -11,7 +11,6 @@ public class PlayerShoot : MonoBehaviour{
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
 
-
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
@@ -19,10 +18,31 @@ public class PlayerShoot : MonoBehaviour{
       void Update(){
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0){
-                        playerFire();
-                        nextAttackTime = Time.time + 1f / attackRate;
-                  }
+                 if (gameObject.tag == "player1") {
+                        if (Input.GetAxis("p1Shoot") > 0){
+                              playerFire();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else if (gameObject.tag == "player2") {
+                        if (Input.GetAxis("p2Shoot") > 0){
+                              playerFire();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else if (gameObject.tag == "player3") {
+                        if (Input.GetAxis("p3Shoot") > 0){
+                              playerFire();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 else if(gameObject.tag == "player4") {
+                        if (Input.GetAxis("p4Shoot") > 0){
+                              playerFire();
+                              nextAttackTime = Time.time + 1f / attackRate;
+                        }
+                 }
+                 
             }
       }
 
