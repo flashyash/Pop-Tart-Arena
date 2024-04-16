@@ -8,7 +8,7 @@ public class PlayerAttackMelee : MonoBehaviour
       //public Animator animator;
       public Transform attackPt;
       public GameObject gameHandler;
-      public float attackRange = 0.4f;
+      public float attackRange = 4f;
       public float attackRate = 1f;
       private float nextAttackTime = 0f;
       private int playerNum;
@@ -79,7 +79,7 @@ public class PlayerAttackMelee : MonoBehaviour
                   playerNum = int.Parse(enemy.name.Substring(6,1));
                   if (enemy.tag != gameObject.tag)
                   {
-                        Debug.Log("We hit " + enemy.name);
+                        Debug.Log("We hit melee " + enemy.name);
                         gameHandler.GetComponent<GameHandler>().playerGetHit(attackDamage, playerNum);
                   }
             }

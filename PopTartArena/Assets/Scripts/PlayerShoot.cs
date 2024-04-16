@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour{
 
+      public GameObject gameHandler;      
       public Animator animator;
       public Transform firePoint;
       public GameObject projectilePrefab;
@@ -11,6 +12,9 @@ public class PlayerShoot : MonoBehaviour{
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
       public AudioClip shootSound;
+      private int playerNum;
+      public int attackDamage = 40;
+      public LayerMask enemyLayers;
 
 
       void Start(){
@@ -56,5 +60,17 @@ public class PlayerShoot : MonoBehaviour{
             projectile.GetComponent<Rigidbody2D>().AddForce(fwd * projectileSpeed, ForceMode2D.Impulse);
             AudioSource source = gameObject.AddComponent<AudioSource>();
             source.PlayOneShot(shootSound);
+
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, 4f, enemyLayers);            
+            
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                  playerNum = int.Parse(enemy.name.Substring(6,1));
+                  if (enemy.tag != gameObject.tag)
+                  {
+                        Debug.Log("We hit shoot " + enemy.name);
+                        gameHandler.GetComponent<GameHandler>().playerGetHit(attackDamage, playerNum);
+                  }
+            }
       }
 }
