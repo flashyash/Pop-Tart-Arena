@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour{
 
-      //public Animator animator;
+      public Animator animator;
       public Transform firePoint;
       public GameObject projectilePrefab;
       public float projectileSpeed = 10f;
@@ -12,8 +12,9 @@ public class PlayerShoot : MonoBehaviour{
       private float nextAttackTime = 0f;
       public AudioClip shootSound;
 
+
       void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
+           animator = gameObject.GetComponent<Animator>();
       }
 
       void Update(){
@@ -47,7 +48,10 @@ public class PlayerShoot : MonoBehaviour{
       }
 
       void playerFire(){
-            //animator.SetTrigger ("Fire");
+            if(gameObject.tag == "player1"){
+                  animator.Play("shoot");
+            }
+            
             Vector2 fwd = (firePoint.position - this.transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().AddForce(fwd * projectileSpeed, ForceMode2D.Impulse);

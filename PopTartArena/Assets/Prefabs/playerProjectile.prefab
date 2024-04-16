@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2475205508200134840}
   m_Layer: 0
   m_Name: playerProjectile
-  m_TagString: Untagged
+  m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   SelfDestructTime: 4
   SelfDestructVFX: 0.5
   projectileArt: {fileID: 0}
+  handler: {fileID: 9027325557329184411, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
 --- !u!50 &2475205508200134840
 Rigidbody2D:
   serializedVersion: 4
