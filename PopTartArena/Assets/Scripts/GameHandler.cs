@@ -12,8 +12,6 @@ public class GameHandler : MonoBehaviour
     public static int level = 1;
     public static int[] playerHealth;
     public int StartPlayerHealth = 100;
-    public static int gotTokens = 0;
-    public GameObject tokensText;
     private GameObject p1;
     private GameObject p2;
     private GameObject p3;
@@ -68,12 +66,6 @@ public class GameHandler : MonoBehaviour
             }
         }
 
-        updateStatsDisplay();
-    }
-
-    public void playerGetTokens(int newTokens)
-    {
-        gotTokens += newTokens;
         updateStatsDisplay();
     }
 
