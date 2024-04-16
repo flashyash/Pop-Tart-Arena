@@ -1419,6 +1419,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
@@ -1430,6 +1434,10 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1600571245}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackDamage
       value: 20
@@ -2031,6 +2039,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
@@ -2042,6 +2054,10 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1600571245}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackDamage
       value: 20
@@ -2435,6 +2451,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
@@ -2446,6 +2466,10 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1600571245}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackDamage
       value: 20
@@ -2641,6 +2665,10 @@ PrefabInstance:
     - target: {fileID: 7835974469107222208, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackDamage
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835974469107222208, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7835974469107222208, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: projectilePrefab
@@ -3107,6 +3135,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2003466636028588345, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
+      propertyPath: m_Volume
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003466636028588345, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9065598ceb40e2b44888542326c881e7, type: 3}
     - target: {fileID: 2230023739480365266, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3189,6 +3225,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
@@ -3200,6 +3240,10 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1600571245}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackDamage
       value: 20
@@ -3368,6 +3412,10 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1931783015}
+    - target: {fileID: 7835974469107222208, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7835974469107222208, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: shootSound
       value: 

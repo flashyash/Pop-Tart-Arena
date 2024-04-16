@@ -1129,6 +1129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2003466636028588345, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75b49490f914a9744aa55fc57e5421bb, type: 3}
     - target: {fileID: 2230023739480365266, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1172,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 2230023739480365266, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430421721283076420, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
+      propertyPath: m_Volume
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7474322944097756224, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
       propertyPath: m_Name

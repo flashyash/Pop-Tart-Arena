@@ -73,7 +73,6 @@ public class GameHandler : MonoBehaviour
 
     public void playerGetHit(int damage, int whichPlayer)
     {
-
         if(whichPlayer == 1) {
             p1Anim.Play("hit");
             gotHit.Play();

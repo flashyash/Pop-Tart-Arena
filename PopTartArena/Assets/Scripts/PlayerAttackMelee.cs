@@ -76,7 +76,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                  playerNum = int.Parse(enemy.name.Substring(6,1));
+                  playerNum = int.Parse(enemy.tag.Substring(6,1));
                   if (enemy.tag != gameObject.tag)
                   {
                         Debug.Log("We hit melee " + enemy.name);
