@@ -115,20 +115,24 @@ public class GameHandler : MonoBehaviour
                 Debug.Log("P1Died");
                 p1Anim.Play("death");
                 deathSound.Play();
+                StartCoroutine(DeathPause(p1));
             }
             else if(whichPlayer == 2) {
                 p2Anim.Play("death");
                 deathSound.Play();
+                StartCoroutine(DeathPause(p2));
             }
             else if(whichPlayer == 3) {
                 p3Anim.Play("death");
                 deathSound.Play();
+                StartCoroutine(DeathPause(p3));
             }
             else if(whichPlayer == 4) {
                 p4Anim.Play("death");
                 deathSound.Play();
+                StartCoroutine(DeathPause(p4));
             }
-            playerDies();
+
         }
     }
 
@@ -137,17 +141,14 @@ public class GameHandler : MonoBehaviour
         
     }
 
-    public void playerDies()
-    {
-        //player.GetComponent<PlayerHurt>().playerDead();       //play Death animation
-        StartCoroutine(DeathPause());
-    }
 
-    IEnumerator DeathPause()
+    IEnumerator DeathPause(GameObject player)
     {
         // player.GetComponent<PlayerMove>().isAlive = false;   //deactivate movement animation
         // player.GetComponent<PlayerJump>().isAlive = false;   //deactivate jump animation
         yield return new WaitForSeconds(1.0f);
+        player.SetActive(false);
+
     }
 
     public void ChooseNumPlayers()
