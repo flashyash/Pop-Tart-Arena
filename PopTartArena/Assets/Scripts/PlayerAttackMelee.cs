@@ -12,7 +12,7 @@ public class PlayerAttackMelee : MonoBehaviour
       public float attackRate = 1f;
       private float nextAttackTime = 0f;
       private int playerNum;
-      public int attackDamage = 40;
+      public int attackDamage = 15;
       public LayerMask enemyLayers;
       public AudioClip shootSound;
       public bool isPlayer1 = false;
@@ -27,7 +27,6 @@ public class PlayerAttackMelee : MonoBehaviour
 
       void Update()
       {
-
             if (Time.time >= nextAttackTime)
             {
                   if (isPlayer1)
@@ -76,8 +75,8 @@ public class PlayerAttackMelee : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                  playerNum = int.Parse(enemy.tag.Substring(6,1));
-                  if (enemy.tag != gameObject.tag)
+                  playerNum = int.Parse(enemy.tag.Substring(6, 1)); // read the number of the player tag
+                  if (enemy.tag != gameObject.tag) // don't damage self
                   {
                         Debug.Log("We hit melee " + enemy.name);
                         gameHandler.GetComponent<GameHandler>().playerGetHit(attackDamage, playerNum);
@@ -85,31 +84,10 @@ public class PlayerAttackMelee : MonoBehaviour
             }
 
             //NOTE: to help see the attack sphere in editor:
-            void OnDrawGizmosSelected()
-            {
-                  if (attackPt == null) { return; }
-                  Gizmos.DrawWireSphere(attackPt.position, attackRange);
-            }
-
-            int determinePlayer()
-            {
-                  if (isPlayer1)
-                  {
-                        return 1;
-                  }
-                  else if (isPlayer2)
-                  {
-                        return 2;
-                  }
-                  else if (isPlayer3)
-                  {
-                        return 3;
-                  }
-                  else if (isPlayer4)
-                  {
-                        return 4;
-                  }
-                  else return 0;
-            }
+            // void OnDrawGizmosSelected()
+            // {
+            //       if (attackPt == null) { return; }
+            //       Gizmos.DrawWireSphere(attackPt.position, attackRange);
+            // }
       }
 }
