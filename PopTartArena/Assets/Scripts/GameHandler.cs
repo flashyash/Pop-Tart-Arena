@@ -32,12 +32,10 @@ public class GameHandler : MonoBehaviour
 
     void Start()
     {
-
         sceneName = SceneManager.GetActiveScene().name;
 
-        // change later to run on all game scenes
-
-        if (sceneName == "Pantry_Arena")
+        // This should actually run on all scenes with players in them ie non-menu scenes
+        if (sceneName == "Pantry_Arena" || sceneName == "WillTest")
         {
             // get GameObject of each player and add to an array for ez access
             p1 = GameObject.FindWithTag("player1");

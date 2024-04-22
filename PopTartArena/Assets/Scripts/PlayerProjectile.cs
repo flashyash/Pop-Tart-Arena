@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerProjectile : MonoBehaviour{
+public class PlayerProjectile : MonoBehaviour
+{
 
       public int damage = 1;
       public GameObject hitEffectAnim;
@@ -10,39 +11,37 @@ public class PlayerProjectile : MonoBehaviour{
       public float SelfDestructVFX = 0.5f;
       public SpriteRenderer projectileArt;
       public GameObject handler;
-      void Start(){
-           
-           projectileArt = GetComponentInChildren<SpriteRenderer>();
-           selfDestruct();
+      private int playerNum;
+
+      void Start()
+      {
+            handler = GameObject.FindWithTag("GameHandler");
+            projectileArt = GetComponentInChildren<SpriteRenderer>();
+            selfDestruct();
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
-      void OnColliderEnter2D(Collider2D other){
+      public void OnCollisionEnter2D(Collision2D other)
+      {
+            if (other.gameObject.layer == 6) //check if the other gameObject is in the enemies layer (6)
+            {
+                  playerNum = int.Parse(other.gameObject.tag.Substring(6, 1)); // read the number of the player tag
+                  handler.GetComponent<GameHandler>().playerGetHit(damage, playerNum);
+            }
+            Debug.Log("Hit " + other.gameObject.tag);
+            Destroy(gameObject); // change to the function below if we have a hit animation
+      }
 
+      IEnumerator selfDestructHit(GameObject VFX)
+      {
+            yield return new WaitForSeconds(SelfDestructVFX);
+            Destroy(VFX);
             Destroy(gameObject);
       }
 
-      IEnumerator selfDestructHit(GameObject VFX){
-            yield return new WaitForSeconds(SelfDestructVFX);
-            Destroy (VFX);
-            Destroy (gameObject);
-      }
-
-      IEnumerator selfDestruct(){
+      IEnumerator selfDestruct()
+      {
             yield return new WaitForSeconds(SelfDestructTime);
             Destroy(gameObject);
-      }
-
-      int findPlayer(string tag) {
-            if(tag == "player1"){
-                  return 1;
-            }
-            else if(tag == "player2"){
-                  return 2;
-            }
-            else if(tag == "player3"){
-                  return 3;
-            }
-            else return 4;
       }
 }

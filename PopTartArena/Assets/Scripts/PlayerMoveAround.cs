@@ -64,7 +64,7 @@ public class MultiPlayerMoveAround : MonoBehaviour
 
             transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
 
-            if ((Input.GetAxis("Horizontal") != 0))
+            if (Input.GetAxis("Horizontal") != 0)
             {
                 anim.SetBool ("Walk", true);
                 //     if (!WalkSFX.isPlaying){
