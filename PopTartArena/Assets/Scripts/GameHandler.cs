@@ -39,7 +39,7 @@ public class GameHandler : MonoBehaviour
 
         if (sceneName == "Pantry_Arena")
         {
-            // get GameObject of each player and add to an array
+            // get GameObject of each player and add to an array for ez access
             p1 = GameObject.FindWithTag("player1");
             p2 = GameObject.FindWithTag("player2");
             p3 = GameObject.FindWithTag("player3");
@@ -162,7 +162,6 @@ public class GameHandler : MonoBehaviour
         // player.GetComponent<PlayerJump>().isAlive = false;   //deactivate jump animation
         yield return new WaitForSeconds(1.0f);
         player.SetActive(false);
-
     }
 
     public void ChooseNumPlayers()

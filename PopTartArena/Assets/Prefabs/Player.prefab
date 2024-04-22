@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPt: {fileID: 0}
+  gameHandler: {fileID: 0}
   attackRange: 0.5
   attackRate: 2
   attackDamage: 40
@@ -369,7 +370,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d537ac2206567684f9925d1fd9b8faf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameHandler: {fileID: 0}
+  animator: {fileID: 0}
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 0}
   projectileSpeed: 10
   attackRate: 2
+  shootSound: {fileID: 0}
+  attackDamage: 40
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0

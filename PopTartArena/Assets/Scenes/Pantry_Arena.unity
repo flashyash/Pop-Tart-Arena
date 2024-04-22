@@ -2024,7 +2024,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackRange
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: gameHandler
@@ -2496,7 +2496,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackRange
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: gameHandler
@@ -3330,7 +3330,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: attackRange
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: gameHandler
