@@ -76,18 +76,22 @@ public class GameHandler : MonoBehaviour
         if(whichPlayer == 1) {
             p1Anim.Play("hit");
             gotHit.Play();
+            updateHealthBar(1);
         }
         else if(whichPlayer == 2) {
             p2Anim.Play("hit");
             gotHit.Play();
+            updateHealthBar(2);
         }
         else if(whichPlayer == 3) {
             p3Anim.Play("hit");
             gotHit.Play();
+            updateHealthBar(3);
         }
         else if(whichPlayer == 4) {
             p4Anim.Play("hit");
             gotHit.Play();
+            updateHealthBar(4);
         }
        
         int playerIndex = whichPlayer - 1; 
@@ -138,6 +142,51 @@ public class GameHandler : MonoBehaviour
     public void updateStatsDisplay()
     {
         
+    }
+
+    public void updateHealthBar(int playerNumber) {
+
+        GameObject currentPlayer = GameObject.Find("Player1"); 
+
+        if (playerNumber == 1) {
+            currentPlayer = GameObject.Find("Player1"); 
+        }
+        if (playerNumber == 2) {
+            currentPlayer = GameObject.Find("Player2"); 
+        }
+        if (playerNumber == 3) {
+            currentPlayer = GameObject.Find("Player3"); 
+        }
+        if (playerNumber == 4) {
+            currentPlayer = GameObject.Find("Player4"); 
+        }
+
+            Transform healthBar = currentPlayer.transform.Find("HealthBar");
+            Transform zeroHits = healthBar.transform.Find("0Hits");
+            Transform oneHit = healthBar.transform.Find("1Hit");
+            Transform twoHits = healthBar.transform.Find("2Hits");
+            Transform threeHits = healthBar.transform.Find("3Hits");
+            Transform fourHits = healthBar.transform.Find("4Hits");
+
+            if (zeroHits.gameObject.activeSelf) {
+                zeroHits.gameObject.SetActive(false);
+                oneHit.gameObject.SetActive(true);
+            }
+
+            else if (oneHit.gameObject.activeSelf) {
+                oneHit.gameObject.SetActive(false);
+                twoHits.gameObject.SetActive(true);
+            }
+
+            else if (twoHits.gameObject.activeSelf) {
+                twoHits.gameObject.SetActive(false);
+                threeHits.gameObject.SetActive(true);
+            }
+
+            else if (threeHits.gameObject.activeSelf) {
+                threeHits.gameObject.SetActive(false);
+                fourHits.gameObject.SetActive(true);
+            }
     }
 
 
