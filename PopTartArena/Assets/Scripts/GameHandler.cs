@@ -75,18 +75,27 @@ public class GameHandler : MonoBehaviour
         {
             if (whichPlayer == 1)
             {
+                Color og = p1.GetComponent<SpriteRenderer>().color;
+                p1.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                StartCoroutine(playerRed(p1, og));
                 StartCoroutine(PlayerDisabled(p1));
                 p1Anim.Play("hit");
                 gotHit.Play();
             }
             else if (whichPlayer == 2)
             {
+                Color og = p2.GetComponent<SpriteRenderer>().color;
+                p2.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                StartCoroutine(playerRed(p2, og));
                 StartCoroutine(PlayerDisabled(p2));
                 p2Anim.Play("hit");
                 gotHit.Play();
             }
             else if (whichPlayer == 3)
             {
+                Color og = p3.GetComponent<SpriteRenderer>().color;
+                p3.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                StartCoroutine(playerRed(p3, og));
                 StartCoroutine(PlayerDisabled(p3));
                 p3Anim.Play("hit");
                 gotHit.Play();
@@ -130,7 +139,10 @@ public class GameHandler : MonoBehaviour
     //     healthSlider.value = playerHealth[whichPlayer-1];
     // }
 
-
+    IEnumerator playerRed(GameObject player, Color original) {
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<SpriteRenderer>().material.SetColor("_Color", original); 
+    }
     IEnumerator DeathPause(GameObject player)
     {
         // player.GetComponent<PlayerMove>().isAlive = false;   //deactivate movement animation
