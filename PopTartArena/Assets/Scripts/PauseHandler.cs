@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 // using UnityEngine.Audio;     /*Uncomment for volume slider*/
 
 /*BASELINE PAUSEHANDLER*/
@@ -58,11 +59,20 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void QuitGame(){
+                SceneManager.LoadScene("MainMenu");
                 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
                 #else
                 Application.Quit();
                 #endif
+        }
+
+        // Return to MainMenu
+        public void RestartGame()
+        {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("MainMenu");
+                // Reset all static variables here, for new games:
         }
 
         /*UNCOMMENT BELOW FOR VOLUME SLIDER*/
