@@ -235,6 +235,7 @@ public class GameHandler : MonoBehaviour
 
     public void QuitGame()
     {
+    SceneManager.LoadScene("MainMenu");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
