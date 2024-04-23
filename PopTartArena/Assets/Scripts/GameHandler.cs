@@ -38,7 +38,9 @@ public class GameHandler : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
 
         // This should actually run on all scenes with players in them ie non-menu scenes
-        if (sceneName == "Pantry_Arena" || sceneName == "WillTest")
+        if (sceneName == "Pantry_Arena" || sceneName == "Oven_Arena"
+            || sceneName == "Stove_Arena" || sceneName == "Sink_Arena"
+            || sceneName == "Counter_Arena" || sceneName == "WillTest")
         {
             // get GameObject of each player and add to an array for ez access
             p1 = GameObject.FindWithTag("player1");
@@ -63,6 +65,18 @@ public class GameHandler : MonoBehaviour
             {
                 playerHealth[i] = StartPlayerHealth;
             }
+        }
+    }
+
+    public void checkIfPlayerWon() {
+        int playerWon = -1;
+        for (int i = 0; i < playerHealth.Length; i++) {
+            playerWon = checkWinCondition(i);
+            Debug.Log("checked win condition and player won is " + playerWon);
+
+            if (playerWon != -1) {
+            SceneManager.LoadScene("EndScene");
+        }
         }
     }
 
@@ -129,8 +143,30 @@ public class GameHandler : MonoBehaviour
                 deathSound.Play();
                 StartCoroutine(DeathPause(p3));
             }
+            checkIfPlayerWon();
         }
     }
+
+public int checkWinCondition(int currentPlayerIndex)
+{
+    // Check if the current player's health is greater than 0
+    if (playerHealth[currentPlayerIndex] > 0)
+    {
+        // Check if all other players have 0 health
+        for (int j = 0; j < playerHealth.Length; j++)
+        {
+            if (j != currentPlayerIndex && playerHealth[j] > 0)
+            {
+                // If any other player has health greater than 0, the current player hasn't won yet
+                return -1; // No winner yet
+            }
+        }
+        // If all other players have 0 health, the current player has won
+        return currentPlayerIndex;
+    }
+    // If the current player's health is 0 or less, they cannot win
+    return -1; // No winner yet
+}
 
     // void updateHealthBar(int whichPlayer)
     // {
