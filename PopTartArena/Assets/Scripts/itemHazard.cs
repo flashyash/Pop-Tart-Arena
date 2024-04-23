@@ -12,7 +12,11 @@ public class itemHazard : MonoBehaviour
     {
         handler = GameObject.FindWithTag("GameHandler");
     }
-
+    void Update() {
+        if(gameObject.transform.position.y <= -10) {
+            Destroy(gameObject);
+        }
+    }
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.layer == 6) //check if the other gameObject is in the enemies layer (6)
         {
