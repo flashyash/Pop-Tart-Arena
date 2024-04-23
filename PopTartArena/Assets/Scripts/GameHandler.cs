@@ -211,16 +211,16 @@ public class GameHandler : MonoBehaviour
                 SceneManager.LoadScene("Pantry_Arena");
                 break;
             case 2:
-                SceneManager.LoadScene("Pantry_Arena");
+                SceneManager.LoadScene("Oven_Arena");
                 break;
             case 3:
-                SceneManager.LoadScene("Pantry_Arena");
+                SceneManager.LoadScene("Stove_Arena");
                 break;
             case 4:
-                SceneManager.LoadScene("Pantry_Arena");
+                SceneManager.LoadScene("Sink_Arena");
                 break;
             case 5:
-                SceneManager.LoadScene("Pantry_Arena");
+                SceneManager.LoadScene("Counter_Arena");
                 break;
         }
     }
