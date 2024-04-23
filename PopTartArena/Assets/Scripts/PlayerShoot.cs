@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour{
 
-      public GameObject gameHandler;      
+      public GameObject gameHandler;   
+      public bool isAlive = true;   
       public Animator animator;
       public Transform firePoint;
       public GameObject projectilePrefab;
@@ -22,7 +23,7 @@ public class PlayerShoot : MonoBehaviour{
       }
 
       void Update(){
-           if (Time.time >= nextAttackTime){
+           if (Time.time >= nextAttackTime && isAlive){
                  if (gameObject.tag == "player1") {
                         if (Input.GetAxis("p1Shoot") > 0){
                               animator.Play("shoot");

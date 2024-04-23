@@ -6,6 +6,7 @@ public class PlayerAttackMelee : MonoBehaviour
 {
 
       //public Animator animator;
+      public bool isAlive = true;
       public Transform attackPt;
       public GameObject gameHandler;
       public float attackRange = 4f;
@@ -27,7 +28,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
       void Update()
       {
-            if (Time.time >= nextAttackTime)
+            if (Time.time >= nextAttackTime && isAlive)
             {
                   if (isPlayer1)
                   {

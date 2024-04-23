@@ -21,6 +21,7 @@ public class GameHandler : MonoBehaviour
     private Animator p1Anim;
     private Animator p2Anim;
     private Animator p3Anim;
+    private Slider healthSlider;
 
     public bool isDefending = false;
 
@@ -65,41 +66,37 @@ public class GameHandler : MonoBehaviour
 
     public void playerGetHit(int damage, int whichPlayer)
     {
+        int playerIndex = whichPlayer - 1;
+        playerHealth[playerIndex] -= damage;
+
         if (whichPlayer == 1)
         {
             p1Anim.Play("hit");
             gotHit.Play();
-            updateHealthBar(1);
         }
         else if (whichPlayer == 2)
         {
             p2Anim.Play("hit");
             gotHit.Play();
-            updateHealthBar(2);
         }
         else if (whichPlayer == 3)
         {
             p3Anim.Play("hit");
             gotHit.Play();
-            updateHealthBar(3);
         }
 
-        int playerIndex = whichPlayer - 1;
-        playerHealth[playerIndex] -= damage;
-
-
+        updateHealthBar(whichPlayer);
 
         if (playerHealth[playerIndex] > StartPlayerHealth)
         {
             playerHealth[playerIndex] = StartPlayerHealth;
         }
-
+        // if player is dead
         if (playerHealth[playerIndex] <= 0)
         {
             playerHealth[playerIndex] = 0;
             if (whichPlayer == 1)
             {
-                Debug.Log("P1Died");
                 p1Anim.Play("death");
                 deathSound.Play();
                 StartCoroutine(DeathPause(p1));
@@ -119,38 +116,11 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    public void updateHealthBar(int playerNumber)
+    void updateHealthBar(int whichPlayer)
     {
-        Transform healthBar = players[playerNumber - 1].transform.Find("HealthBar");
-        Transform zeroHits = healthBar.transform.Find("0Hits");
-        Transform oneHit = healthBar.transform.Find("1Hit");
-        Transform twoHits = healthBar.transform.Find("2Hits");
-        Transform threeHits = healthBar.transform.Find("3Hits");
-        Transform fourHits = healthBar.transform.Find("4Hits");
-
-        if (zeroHits.gameObject.activeSelf)
-        {
-            zeroHits.gameObject.SetActive(false);
-            oneHit.gameObject.SetActive(true);
-        }
-
-        else if (oneHit.gameObject.activeSelf)
-        {
-            oneHit.gameObject.SetActive(false);
-            twoHits.gameObject.SetActive(true);
-        }
-
-        else if (twoHits.gameObject.activeSelf)
-        {
-            twoHits.gameObject.SetActive(false);
-            threeHits.gameObject.SetActive(true);
-        }
-
-        else if (threeHits.gameObject.activeSelf)
-        {
-            threeHits.gameObject.SetActive(false);
-            fourHits.gameObject.SetActive(true);
-        }
+        GameObject currPlayer = players[whichPlayer-1];
+        healthSlider = currPlayer.GetComponentInChildren<Slider>();
+        healthSlider.value = playerHealth[whichPlayer-1];
     }
 
 
@@ -158,7 +128,11 @@ public class GameHandler : MonoBehaviour
     {
         // player.GetComponent<PlayerMove>().isAlive = false;   //deactivate movement animation
         // player.GetComponent<PlayerJump>().isAlive = false;   //deactivate jump animation
-        yield return new WaitForSeconds(1.0f);
+        player.GetComponent<MultiPlayerMoveAround>().isAlive = false;
+        player.GetComponent<PlayerJump>().isAlive = false;
+        player.GetComponent<PlayerShoot>().isAlive = false;
+        player.GetComponent<PlayerAttackMelee>().isAlive = false;
+        yield return new WaitForSeconds(2.0f); // make all death animations same length and match with this time
         player.SetActive(false);
     }
 
