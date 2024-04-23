@@ -18,7 +18,7 @@ public class PlayerProjectile : MonoBehaviour
       {
             handler = GameObject.FindWithTag("GameHandler");
             projectileArt = GetComponentInChildren<SpriteRenderer>();
-            selfDestruct();
+            StartCoroutine(selfDestruct());
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
@@ -33,7 +33,10 @@ public class PlayerProjectile : MonoBehaviour
                         handler.GetComponent<GameHandler>().playerGetHit(damage, playerNum);
                         Destroy(gameObject); // change to the function below if we have a hit animation
                   }
+
             }
+            else Destroy(gameObject);
+
       }
 
       IEnumerator selfDestructHit(GameObject VFX)
