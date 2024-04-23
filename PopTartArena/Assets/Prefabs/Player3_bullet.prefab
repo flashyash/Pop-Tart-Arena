@@ -105,6 +105,7 @@ MonoBehaviour:
   SelfDestructVFX: 0.5
   projectileArt: {fileID: 0}
   handler: {fileID: 7474322944097756224, guid: b0e94a44598d0254d93f71c8882261ca, type: 3}
+  belongsToPlayerNum: 3
 --- !u!50 &-1080218193497189821
 Rigidbody2D:
   serializedVersion: 4

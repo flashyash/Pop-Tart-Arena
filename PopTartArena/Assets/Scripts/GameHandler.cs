@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Numerics;
 
 public class GameHandler : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameHandler : MonoBehaviour
     public static int level = 1;
     public static int[] playerHealth;
     public int StartPlayerHealth = 100;
+    public float hitDisabledTime = 0.5f;
     public AudioSource deathSound;
     public AudioSource gotHit;
     private GameObject p1;
@@ -69,23 +71,28 @@ public class GameHandler : MonoBehaviour
         int playerIndex = whichPlayer - 1;
         playerHealth[playerIndex] -= damage;
 
-        if (whichPlayer == 1)
+        if (playerHealth[playerIndex] > 0)
         {
-            p1Anim.Play("hit");
-            gotHit.Play();
-        }
-        else if (whichPlayer == 2)
-        {
-            p2Anim.Play("hit");
-            gotHit.Play();
-        }
-        else if (whichPlayer == 3)
-        {
-            p3Anim.Play("hit");
-            gotHit.Play();
+            if (whichPlayer == 1)
+            {
+                StartCoroutine(PlayerDisabled(p1));
+                p1Anim.Play("hit");
+                gotHit.Play();
+            }
+            else if (whichPlayer == 2)
+            {
+                StartCoroutine(PlayerDisabled(p2));
+                p2Anim.Play("hit");
+                gotHit.Play();
+            }
+            else if (whichPlayer == 3)
+            {
+                StartCoroutine(PlayerDisabled(p3));
+                p3Anim.Play("hit");
+                gotHit.Play();
+            }
         }
 
-        updateHealthBar(whichPlayer);
 
         if (playerHealth[playerIndex] > StartPlayerHealth)
         {
@@ -116,12 +123,12 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    void updateHealthBar(int whichPlayer)
-    {
-        GameObject currPlayer = players[whichPlayer-1];
-        healthSlider = currPlayer.GetComponentInChildren<Slider>();
-        healthSlider.value = playerHealth[whichPlayer-1];
-    }
+    // void updateHealthBar(int whichPlayer)
+    // {
+    //     GameObject currPlayer = players[whichPlayer-1];
+    //     healthSlider = currPlayer.GetComponentInChildren<Slider>();
+    //     healthSlider.value = playerHealth[whichPlayer-1];
+    // }
 
 
     IEnumerator DeathPause(GameObject player)
@@ -134,6 +141,22 @@ public class GameHandler : MonoBehaviour
         player.GetComponent<PlayerAttackMelee>().isAlive = false;
         yield return new WaitForSeconds(2.0f); // make all death animations same length and match with this time
         player.SetActive(false);
+    }
+
+    IEnumerator PlayerDisabled(GameObject player)
+    {
+        // make player jump a lil bit, kinda like a knockback
+        player.GetComponent<PlayerJump>().Jump(UnityEngine.Vector2.up / 3);
+        // disable the player's ability to do stuff for a small time
+        player.GetComponent<MultiPlayerMoveAround>().isAlive = false;
+        player.GetComponent<PlayerJump>().isAlive = false;
+        player.GetComponent<PlayerShoot>().isAlive = false;
+        player.GetComponent<PlayerAttackMelee>().isAlive = false;
+        yield return new WaitForSeconds(hitDisabledTime);
+        player.GetComponent<MultiPlayerMoveAround>().isAlive = true;
+        player.GetComponent<PlayerJump>().isAlive = true;
+        player.GetComponent<PlayerShoot>().isAlive = true;
+        player.GetComponent<PlayerAttackMelee>().isAlive = true;
     }
 
     public void ChooseNumPlayers()

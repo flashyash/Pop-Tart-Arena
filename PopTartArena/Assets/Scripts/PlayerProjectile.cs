@@ -12,6 +12,7 @@ public class PlayerProjectile : MonoBehaviour
       public SpriteRenderer projectileArt;
       public GameObject handler;
       private int playerNum;
+      public int belongsToPlayerNum = 0;
 
       void Start()
       {
@@ -26,10 +27,13 @@ public class PlayerProjectile : MonoBehaviour
             if (other.gameObject.layer == 6) //check if the other gameObject is in the enemies layer (6)
             {
                   playerNum = int.Parse(other.gameObject.tag.Substring(6, 1)); // read the number of the player tag
-                  handler.GetComponent<GameHandler>().playerGetHit(damage, playerNum);
+                  if(playerNum != belongsToPlayerNum)
+                  {
+                        Debug.Log("Hit " + other.gameObject.tag);
+                        handler.GetComponent<GameHandler>().playerGetHit(damage, playerNum);
+                        Destroy(gameObject); // change to the function below if we have a hit animation
+                  }
             }
-            Debug.Log("Hit " + other.gameObject.tag);
-            Destroy(gameObject); // change to the function below if we have a hit animation
       }
 
       IEnumerator selfDestructHit(GameObject VFX)
