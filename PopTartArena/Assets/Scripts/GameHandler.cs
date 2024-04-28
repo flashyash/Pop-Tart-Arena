@@ -16,6 +16,7 @@ public class GameHandler : MonoBehaviour
     public float hitDisabledTime = 0.5f;
     public AudioSource deathSound;
     public AudioSource gotHit;
+    public AudioSource fight;  
     private GameObject p1;
     private GameObject p2;
     private GameObject p3;
@@ -65,6 +66,8 @@ public class GameHandler : MonoBehaviour
             {
                 playerHealth[i] = StartPlayerHealth;
             }
+
+            fight.Play();
         }
     }
 
