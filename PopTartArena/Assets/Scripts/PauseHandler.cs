@@ -76,8 +76,8 @@ public class PauseHandler : MonoBehaviour {
         }
 
         /*UNCOMMENT BELOW FOR VOLUME SLIDER*/
-        // public void SetLevel(float sliderValue){
-        //         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-        //         volumeLevel = sliderValue;
-        // }
+        //public void SetLevel(float sliderValue){
+        //        mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+        //        volumeLevel = sliderValue;
+        //}
 }

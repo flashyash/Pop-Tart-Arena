@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 4223374842834506074, guid: 66a0f53326495421299c05d508718f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260302365117139908, guid: 66a0f53326495421299c05d508718f0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5093248538948167052, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -217,6 +225,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093248538948167052, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581102979724093338, guid: 66a0f53326495421299c05d508718f0d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
