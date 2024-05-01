@@ -1118,8 +1118,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Be the last poptart standing!\n\nKeyboard Inputs\nPlayer 1: WASD, c and
-    v to attack\nPlayer 2: IJKL, . and / to attack\n\nController Inputs\nMove: L
-    Joystick,\tJump: A\nAttack: B and Y"
+    v to attack\nPlayer 2: Arrows, . and / to attack\n\nController Inputs\nMove:
+    L Joystick,\tJump: A\nAttack: B and Y"
 --- !u!222 &2118683371
 CanvasRenderer:
   m_ObjectHideFlags: 0

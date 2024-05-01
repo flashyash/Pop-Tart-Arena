@@ -71,6 +71,8 @@ public class PlayerAttackMelee : MonoBehaviour
 
       void Attack()
       {
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.PlayOneShot(shootSound);
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 

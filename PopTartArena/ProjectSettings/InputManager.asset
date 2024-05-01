@@ -521,8 +521,8 @@ InputManager:
     m_Name: p2Horiz
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: j
-    positiveButton: l
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -540,7 +540,7 @@ InputManager:
     negativeButton: 
     positiveButton: joystick 2 button 0
     altNegativeButton: 
-    altPositiveButton: i
+    altPositiveButton: up
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -601,7 +601,7 @@ InputManager:
     m_Name: p2Drop
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: k
+    negativeButton: down
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
@@ -827,7 +827,7 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
-    altNegativeButton: k
+    altNegativeButton: down
     altPositiveButton: 
     gravity: 0
     dead: 0.19
