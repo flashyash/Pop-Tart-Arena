@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-
-    //public Animator anim;
-    public Rigidbody2D rb;
-    public Collider2D playerCollider;
+    private Rigidbody2D rb;
+    private Collider2D playerCollider;
     public float jumpForce = 10f;
     public Transform feet;
     public LayerMask groundLayer;
@@ -20,17 +18,17 @@ public class PlayerJump : MonoBehaviour
     public bool isPlayer4 = false;
     private bool jumpButtonDown = false;
     private bool dropButtonDown = false;
-    public GameObject platforms;
+    private GameObject platforms;
 
     private Animator anim;
     //public AudioSource JumpSFX;
 
     void Start()
     {
-        //anim = gameObject.GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-        anim = gameObject.GetComponentInChildren<Animator>();
+        anim = gameObject.GetComponent<Animator>();
+        platforms = GameObject.FindWithTag("Platforms");
     }
 
     void Update()

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour{
 
-      public GameObject gameHandler;   
+      private GameObject gameHandler;   
       public bool isAlive = true;   
-      public Animator animator;
+      private Animator animator;
       public Transform firePoint;
       public GameObject projectilePrefab;
       public float projectileSpeed = 10f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
-      public AudioClip shootSound;
+      public AudioSource shootSound;
       private int playerNum;
       public int attackDamage = 40;
       public LayerMask enemyLayers;
@@ -20,6 +20,9 @@ public class PlayerShoot : MonoBehaviour{
 
       void Start(){
            animator = gameObject.GetComponent<Animator>();
+           if (GameObject.FindWithTag("GameHandler")!= null){
+                  gameHandler = GameObject.FindWithTag("GameHandler");
+            }
       }
 
       void Update(){
@@ -54,10 +57,12 @@ public class PlayerShoot : MonoBehaviour{
       }
 
       void playerFire(){   
+            //AudioSource source = gameObject.AddComponent<AudioSource>();
+            //source.PlayOneShot(shootSound);
+            shootSound.Play();
             Vector2 fwd = (firePoint.position - this.transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().AddForce(fwd * projectileSpeed, ForceMode2D.Impulse);
-            AudioSource source = gameObject.AddComponent<AudioSource>();
-            source.PlayOneShot(shootSound);
+            
       }
 }

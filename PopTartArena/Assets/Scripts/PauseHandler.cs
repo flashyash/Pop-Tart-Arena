@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-// using UnityEngine.Audio;     /*Uncomment for volume slider*/
+using UnityEngine.Audio;
 
 /*BASELINE PAUSEHANDLER*/
 public class PauseHandler : MonoBehaviour {
+        public AudioMixer mixer;
+        public static float volumeLevel = 1.0f;
+        private Slider sliderVolumeCtrl;
         public static bool isGamePaused = false;
         public GameObject pauseMenuUI;
         /*UNCOMMENT NEXT 2 LINES FOR TWEENING*/
@@ -18,14 +21,14 @@ public class PauseHandler : MonoBehaviour {
         // public static float volumeLevel = 1.0f;
         // private Slider sliderVolumeCtrl;
 
-        // void Awake(){
-        //         SetLevel (volumeLevel);
-        //         GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-        //         if (sliderTemp != null){
-        //                 sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-        //                 sliderVolumeCtrl.value = volumeLevel;
-        //         }
-        // }
+       void Awake (){
+                SetLevel (volumeLevel);
+                GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+                if (sliderTemp != null){
+                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                        sliderVolumeCtrl.value = volumeLevel;
+                }
+        }
 
         void Start(){
                 pauseMenuUI.SetActive(false);
@@ -75,9 +78,8 @@ public class PauseHandler : MonoBehaviour {
                 // Reset all static variables here, for new games:
         }
 
-        /*UNCOMMENT BELOW FOR VOLUME SLIDER*/
-        //public void SetLevel(float sliderValue){
-        //        mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-        //        volumeLevel = sliderValue;
-        //}
+         public void SetLevel (float sliderValue){
+                mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+                volumeLevel = sliderValue;
+        }
 }

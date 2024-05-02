@@ -17,6 +17,8 @@ public class MultiPlayerMoveAround : MonoBehaviour
     public bool isPlayer2 = false;
     public bool isPlayer3 = false;
     public bool isPlayer4 = false;
+    public Transform healthBar;
+
 
     private Vector3 hvMove;
 
@@ -94,6 +96,9 @@ public class MultiPlayerMoveAround : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+        Vector3 theHealthScale = healthBar.localScale;
+        theHealthScale.x *= -1;
+        healthBar.localScale = theHealthScale;
     }
 
 }

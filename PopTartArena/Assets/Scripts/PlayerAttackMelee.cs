@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class PlayerAttackMelee : MonoBehaviour
 {
-
-      //public Animator animator;
       public bool isAlive = true;
       public Transform attackPt;
-      public GameObject gameHandler;
+      private GameObject gameHandler;
       public float attackRange = 4f;
       public float attackRate = 1f;
       private float nextAttackTime = 0f;
       private int playerNum;
       public int attackDamage = 15;
       public LayerMask enemyLayers;
-      public AudioClip shootSound;
+      public AudioSource shootSound;
       public bool isPlayer1 = false;
       public bool isPlayer2 = false;
       public bool isPlayer3 = false;
@@ -24,6 +22,9 @@ public class PlayerAttackMelee : MonoBehaviour
       void Start()
       {
             anim = gameObject.GetComponent<Animator>();
+            if (GameObject.FindWithTag("GameHandler")!= null){
+                  gameHandler = GameObject.FindWithTag("GameHandler");
+            }
       }
 
       void Update()
@@ -71,8 +72,9 @@ public class PlayerAttackMelee : MonoBehaviour
 
       void Attack()
       {
-            AudioSource source = gameObject.AddComponent<AudioSource>();
-            source.PlayOneShot(shootSound);
+            //AudioSource source = gameObject.AddComponent<AudioSource>();
+            //source.PlayOneShot(shootSound);
+            shootSound.Play();
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 
