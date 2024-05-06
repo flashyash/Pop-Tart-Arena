@@ -7,7 +7,7 @@ using System.Numerics;
 
 public class GameHandler : MonoBehaviour
 {
-
+    private static int winnerNum = 0;
     private GameObject[] players;
     public static int numPlayers = 3;
     public static int level = 1;
@@ -37,6 +37,13 @@ public class GameHandler : MonoBehaviour
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
+
+        //to show winner in endScene:
+        if (sceneName == "EndScene"){
+            GameObject endSceneText = GameObject.FindWithTag("EndSceneText");
+            Debug.Log("I am in the EndScene! I found: " + endSceneText);
+            endSceneText.GetComponent<EndSceneTextChange>().ChangeWinner(winnerNum);
+        } 
 
         // This should actually run on all scenes with players in them ie non-menu scenes
         if (sceneName == "Pantry_Arena" || sceneName == "Oven_Arena"
@@ -86,12 +93,14 @@ public class GameHandler : MonoBehaviour
     public void playerGetHit(int damage, int whichPlayer)
     {
         int playerIndex = whichPlayer - 1;
-        playerHealth[playerIndex] -= damage;
+        playerHealth[playerIndex] -= damage; //set new health for
 
         if (playerHealth[playerIndex] > 0)
         {
             if (whichPlayer == 1)
             {
+                Debug.Log("p1 hit!  health is: " + playerHealth[playerIndex]);
+                p1.GetComponentInChildren<HealthBar>().SetHealth(playerHealth[playerIndex]);
                 Color og = p1.GetComponent<SpriteRenderer>().color;
                 p1.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
                 StartCoroutine(playerRed(p1, og));
@@ -101,6 +110,8 @@ public class GameHandler : MonoBehaviour
             }
             else if (whichPlayer == 2)
             {
+                Debug.Log("p2 hit!  health is: " + playerHealth[playerIndex]);
+                p2.GetComponentInChildren<HealthBar>().SetHealth(playerHealth[playerIndex]);
                 Color og = p2.GetComponent<SpriteRenderer>().color;
                 p2.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
                 StartCoroutine(playerRed(p2, og));
@@ -110,6 +121,8 @@ public class GameHandler : MonoBehaviour
             }
             else if (whichPlayer == 3)
             {
+                Debug.Log("p3 hit!  health is: " + playerHealth[playerIndex]);
+                p3.GetComponentInChildren<HealthBar>().SetHealth(playerHealth[playerIndex]);
                 Color og = p3.GetComponent<SpriteRenderer>().color;
                 p3.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
                 StartCoroutine(playerRed(p3, og));
@@ -165,6 +178,7 @@ public int checkWinCondition(int currentPlayerIndex)
             }
         }
         // If all other players have 0 health, the current player has won
+        winnerNum = currentPlayerIndex + 1;
         return currentPlayerIndex;
     }
     // If the current player's health is 0 or less, they cannot win

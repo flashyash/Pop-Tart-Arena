@@ -83,7 +83,7 @@ public class PlayerAttackMelee : MonoBehaviour
                   playerNum = int.Parse(enemy.tag.Substring(6, 1)); // read the number of the player tag
                   if (enemy.tag != gameObject.tag) // don't damage self
                   {
-                        Debug.Log("We hit melee " + enemy.name);
+                        Debug.Log("We hit melee " + enemy.name + " for damage = " + attackDamage);
                         gameHandler.GetComponent<GameHandler>().playerGetHit(attackDamage, playerNum);
                   }
             }

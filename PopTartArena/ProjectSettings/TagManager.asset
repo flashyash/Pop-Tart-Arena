@@ -12,6 +12,7 @@ TagManager:
   - GameHandler
   - Platforms
   - PauseMenuSlider
+  - EndSceneText
   layers:
   - Default
   - TransparentFX
