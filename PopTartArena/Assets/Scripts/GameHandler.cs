@@ -16,7 +16,7 @@ public class GameHandler : MonoBehaviour
     public float hitDisabledTime = 0.5f;
     public AudioSource deathSound;
     public AudioSource gotHit;
-    public AudioSource fight;  
+    public AudioSource fight;
     private GameObject p1;
     private GameObject p2;
     private GameObject p3;
@@ -39,11 +39,12 @@ public class GameHandler : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
 
         //to show winner in endScene:
-        if (sceneName == "EndScene"){
+        if (sceneName == "EndScene")
+        {
             GameObject endSceneText = GameObject.FindWithTag("EndSceneText");
             Debug.Log("I am in the EndScene! I found: " + endSceneText);
             endSceneText.GetComponent<EndSceneTextChange>().ChangeWinner(winnerNum);
-        } 
+        }
 
         // This should actually run on all scenes with players in them ie non-menu scenes
         if (sceneName == "Pantry_Arena" || sceneName == "Oven_Arena"
@@ -72,21 +73,25 @@ public class GameHandler : MonoBehaviour
             for (int i = 0; i < numPlayers; i++)
             {
                 playerHealth[i] = StartPlayerHealth;
+                updateHealthBar(i+1);
             }
 
             fight.Play();
         }
     }
 
-    public void checkIfPlayerWon() {
+    public void checkIfPlayerWon()
+    {
         int playerWon = -1;
-        for (int i = 0; i < playerHealth.Length; i++) {
+        for (int i = 0; i < playerHealth.Length; i++)
+        {
             playerWon = checkWinCondition(i);
             Debug.Log("checked win condition and player won is " + playerWon);
 
-            if (playerWon != -1) {
-            SceneManager.LoadScene("EndScene");
-        }
+            if (playerWon != -1)
+            {
+                SceneManager.LoadScene("EndScene");
+            }
         }
     }
 
@@ -161,29 +166,54 @@ public class GameHandler : MonoBehaviour
             }
             checkIfPlayerWon();
         }
+
+        updateHealthBar(whichPlayer);
     }
 
-public int checkWinCondition(int currentPlayerIndex)
-{
-    // Check if the current player's health is greater than 0
-    if (playerHealth[currentPlayerIndex] > 0)
+
+    void updateHealthBar(int whichPlayer)
     {
-        // Check if all other players have 0 health
-        for (int j = 0; j < playerHealth.Length; j++)
+        int health = playerHealth[whichPlayer-1];
+        if(whichPlayer == 1)
         {
-            if (j != currentPlayerIndex && playerHealth[j] > 0)
-            {
-                // If any other player has health greater than 0, the current player hasn't won yet
-                return -1; // No winner yet
-            }
+            healthSlider = p1.GetComponentInChildren<Slider>();
+            healthSlider.value = health;
         }
-        // If all other players have 0 health, the current player has won
-        winnerNum = currentPlayerIndex + 1;
-        return currentPlayerIndex;
+        else if(whichPlayer == 2)
+        {
+            healthSlider = p2.GetComponentInChildren<Slider>();
+            healthSlider.value = health;
+        }
+        else if(whichPlayer == 3)
+        {
+            healthSlider = p3.GetComponentInChildren<Slider>();
+            healthSlider.value = health;
+        }
     }
-    // If the current player's health is 0 or less, they cannot win
-    return -1; // No winner yet
-}
+
+
+
+    public int checkWinCondition(int currentPlayerIndex)
+    {
+        // Check if the current player's health is greater than 0
+        if (playerHealth[currentPlayerIndex] > 0)
+        {
+            // Check if all other players have 0 health
+            for (int j = 0; j < playerHealth.Length; j++)
+            {
+                if (j != currentPlayerIndex && playerHealth[j] > 0)
+                {
+                    // If any other player has health greater than 0, the current player hasn't won yet
+                    return -1; // No winner yet
+                }
+            }
+            // If all other players have 0 health, the current player has won
+            winnerNum = currentPlayerIndex + 1;
+            return currentPlayerIndex;
+        }
+        // If the current player's health is 0 or less, they cannot win
+        return -1; // No winner yet
+    }
 
     // void updateHealthBar(int whichPlayer)
     // {
@@ -192,9 +222,10 @@ public int checkWinCondition(int currentPlayerIndex)
     //     healthSlider.value = playerHealth[whichPlayer-1];
     // }
 
-    IEnumerator playerRed(GameObject player, Color original) {
+    IEnumerator playerRed(GameObject player, Color original)
+    {
         yield return new WaitForSeconds(0.5f);
-        player.GetComponent<SpriteRenderer>().material.SetColor("_Color", original); 
+        player.GetComponent<SpriteRenderer>().material.SetColor("_Color", original);
     }
     IEnumerator DeathPause(GameObject player)
     {
@@ -293,7 +324,7 @@ public int checkWinCondition(int currentPlayerIndex)
 
     public void QuitGame()
     {
-    SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
