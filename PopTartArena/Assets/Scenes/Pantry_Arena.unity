@@ -1155,6 +1155,10 @@ PrefabInstance:
       propertyPath: isPlayer2
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2115182824708792221, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_Color.b
       value: 0.40251565
@@ -1175,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3267116057811736966, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bdead7bc9789fb04eb1263285cbaf57e, type: 3}
     - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -1516,6 +1524,10 @@ PrefabInstance:
       propertyPath: isPlayer3
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2115182824708792221, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_Color.b
       value: 0.40251565
@@ -1539,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: 3267116057811736966, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 251d17aca9c55db4ab325326ff6f10b4, type: 3}
+      objectReference: {fileID: 8300000, guid: b7c75757777ee48e6929115be07a29f6, type: 3}
     - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -2338,6 +2350,10 @@ PrefabInstance:
       propertyPath: isPlayer1
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1142873997322250299, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1201070364019418207, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_RenderMode
       value: 2
@@ -2381,7 +2397,7 @@ PrefabInstance:
     - target: {fileID: 3267116057811736966, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: bdead7bc9789fb04eb1263285cbaf57e, type: 3}
+      objectReference: {fileID: 8300000, guid: 251d17aca9c55db4ab325326ff6f10b4, type: 3}
     - target: {fileID: 3444622502836428880, guid: 6f045b6c34193824891bcfc7ce6884d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
