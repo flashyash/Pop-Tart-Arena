@@ -242,6 +242,11 @@ public int checkWinCondition(int currentPlayerIndex)
         SceneManager.LoadScene("Credits");
     }
 
+    public void ShowTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void StartGame()
     {
         switch (level)

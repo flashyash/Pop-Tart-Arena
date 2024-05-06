@@ -38,7 +38,9 @@ public class BGSoundScript : MonoBehaviour
         Debug.Log("Scene changed! Current scene: " + currentScene.name + ", Next scene: " + nextScene.name);
         if (nextScene.name == "Pantry_Arena")
         {
-            menuMusic.Stop();
+            if (menuMusic != null) {
+                menuMusic.Stop();
+            }
             fightMusic.Play();
         }
     }

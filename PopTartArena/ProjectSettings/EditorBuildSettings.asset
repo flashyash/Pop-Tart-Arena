@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Oven_Arena.unity
     guid: f157475d959f14020a44913010db1021
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: efdccd1482dff4b1a9001a0ee7852d40
   m_configObjects: {}
