@@ -41,19 +41,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: f824323098c08459582edbf2c8094433
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sink_Arena.unity
-    guid: 085ad51a3477c43758214ed453f160c9
-  - enabled: 1
+    guid: 576a9a2033cc441b9b0180b05db2c2b0
+  - enabled: 0
     path: Assets/Scenes/Stove_Arena.unity
     guid: 9401821551e594631a1f175ffb030486
   - enabled: 1
     path: Assets/Scenes/Arenas/Counter_Arena.unity
-    guid: 28239b9bc984b474189cdc5206e27802
-  - enabled: 1
+    guid: c3d696748f8b74dcfa99febbe4575749
+  - enabled: 0
     path: Assets/Scenes/Oven_Arena.unity
     guid: f157475d959f14020a44913010db1021
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: efdccd1482dff4b1a9001a0ee7852d40
+  - enabled: 1
+    path: Assets/Scenes/MainMenu 1.unity
+    guid: c5c28f592422c4ceb90d7acea812cfaf
   m_configObjects: {}
