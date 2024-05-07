@@ -44,14 +44,19 @@ public class BGSoundScript : MonoBehaviour
             if (menuMusic != null) {
                 menuMusic.Stop();
             }
-            fightMusic.Play();
+            if(fightMusic != null) {
+                fightMusic.Play();
+            }
+            
         }
         else if (nextScene.name == "MainMenu")
         {
             if (fightMusic != null) {
                 fightMusic.Stop();
             }
-            menuMusic.Play();
+            if (menuMusic != null) {
+                menuMusic.Play();
+            }
         }
     }
 }
