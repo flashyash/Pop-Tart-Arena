@@ -258,13 +258,14 @@ public class GameHandler : MonoBehaviour
     {
         numPlayers = num;
         ShowInstructions();
-        //SceneManager.LoadScene("ChooseLevelScene");
+        SceneManager.LoadScene("ChooseLevelScene");
     }
 
     public void SetLevel(int chosenLevel)
     {
         level = chosenLevel;
-        LoadPrePlayScene();
+        ShowTutorial();
+        //LoadPrePlayScene();
     }
 
     public void LoadPrePlayScene()
@@ -291,7 +292,7 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
-    public void StartGame(int level)
+    public void StartGame()
     {
         switch (level)
         {
