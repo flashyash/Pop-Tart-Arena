@@ -131,21 +131,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 596982924}
     m_Modifications:
+    - target: {fileID: 380251860896707430, guid: 66a0f53326495421299c05d508718f0d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 630957476095772499, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 4223374842834506074, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223374842834506074, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223374842834506074, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223374842834506074, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -165,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260302365117139908, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093248538948167052, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_Pivot.x
@@ -273,11 +277,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581102979724093338, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8581102979724093338, guid: 66a0f53326495421299c05d508718f0d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -543,7 +547,7 @@ GameObject:
   - component: {fileID: 886505654}
   - component: {fileID: 886505653}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: Button_PLAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

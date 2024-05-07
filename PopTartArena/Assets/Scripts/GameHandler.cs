@@ -263,7 +263,8 @@ public class GameHandler : MonoBehaviour
     public void SetNumPlayers(int num)
     {
         numPlayers = num;
-        SceneManager.LoadScene("ChooseLevelScene");
+        ShowInstructions();
+        //SceneManager.LoadScene("ChooseLevelScene");
     }
 
     public void SetLevel(int chosenLevel)
@@ -280,6 +281,10 @@ public class GameHandler : MonoBehaviour
     public void ShowInstructions()
     {
         SceneManager.LoadScene("Instructions");
+    }
+
+    public void ChooseArena(){
+        SceneManager.LoadScene("ChooseLevelScene");
     }
 
     public void ShowCredits()
