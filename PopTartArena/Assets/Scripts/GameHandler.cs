@@ -291,7 +291,7 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
-    public void StartGame()
+    public void StartGame(int level)
     {
         switch (level)
         {
