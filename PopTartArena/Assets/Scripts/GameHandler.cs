@@ -215,12 +215,6 @@ public class GameHandler : MonoBehaviour
         return -1; // No winner yet
     }
 
-    // void updateHealthBar(int whichPlayer)
-    // {
-    //     GameObject currPlayer = players[whichPlayer-1];
-    //     healthSlider = currPlayer.GetComponentInChildren<Slider>();
-    //     healthSlider.value = playerHealth[whichPlayer-1];
-    // }
 
     IEnumerator playerRed(GameObject player, Color original)
     {

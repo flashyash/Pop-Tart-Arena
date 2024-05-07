@@ -36,12 +36,22 @@ public class BGSoundScript : MonoBehaviour
     {
         // change music if necessary
         Debug.Log("Scene changed! Current scene: " + currentScene.name + ", Next scene: " + nextScene.name);
-        if (nextScene.name == "Pantry_Arena")
+        sceneName = nextScene.name;
+        if (sceneName == "Pantry_Arena" || sceneName == "Oven_Arena"
+            || sceneName == "Stove_Arena" || sceneName == "Sink_Arena"
+            || sceneName == "Counter_Arena")
         {
             if (menuMusic != null) {
                 menuMusic.Stop();
             }
             fightMusic.Play();
+        }
+        else if (nextScene.name == "MainMenu")
+        {
+            if (fightMusic != null) {
+                fightMusic.Stop();
+            }
+            menuMusic.Play();
         }
     }
 }
